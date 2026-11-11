@@ -5,593 +5,866 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velora Style | فروشگاه پوشاک</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
 :root{
- --bg:#f8f5ef;--white:#fff;--black:#24211e;
- --gold:#b28b52;--muted:#77716a;--line:#e9e2d8;
- --green:#25834e;--red:#b93d3d;
+ --bg:#f8f5ef;
+ --white:#fff;
+ --black:#24211e;
+ --gold:#b28b52;
+ --muted:#77716a;
+ --line:#e9e2d8;
+ --green:#25834e;
+ --red:#b93d3d;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--black);
- font-family:'Vazirmatn',Tahoma,sans-serif}
-button,input,textarea,select{font:inherit}
+body{
+ margin:0;
+ background:var(--bg);
+ color:var(--black);
+ font-family:'Vazirmatn',Tahoma,sans-serif
+}
+button,input{font:inherit}
 button{cursor:pointer}
-header{background:#211e1b;color:white;padding:17px 5%;
- display:flex;align-items:center;justify-content:space-between;gap:15px;
- position:sticky;top:0;z-index:10}
+header{
+ background:#211e1b;
+ color:white;
+ padding:15px 5%;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ position:sticky;
+ top:0;
+ z-index:10
+}
 .logo{font-size:25px;font-weight:800;letter-spacing:1px}
 .logo span{color:#d5b47e}
-nav{display:flex;gap:10px;align-items:center}
-nav button{background:transparent;color:white;border:0;padding:8px}
-.btn{border:0;border-radius:10px;padding:11px 17px;font-weight:700}
+.header-actions{display:flex;gap:10px;align-items:center}
+.header-btn{
+ border:1px solid #8c795d;
+ background:transparent;
+ color:white;
+ padding:9px 15px;
+ border-radius:10px
+}
+.cart-count{
+ background:#d2ad75;
+ color:#211e1b;
+ border-radius:50%;
+ padding:1px 7px;
+ font-size:12px;
+ margin-right:4px
+}
+.hero{
+ padding:65px 7%;
+ background:linear-gradient(110deg,#27221d,#514536);
+ color:white;
+ min-height:270px;
+ display:flex;
+ align-items:center
+}
+.hero h1{
+ font-size:clamp(28px,5vw,48px);
+ margin:0 0 12px
+}
+.hero p{color:#e4d9c8;line-height:2}
+.btn{
+ border:0;
+ border-radius:10px;
+ padding:11px 17px;
+ font-weight:700
+}
 .btn-gold{background:var(--gold);color:white}
 .btn-dark{background:var(--black);color:white}
 .btn-light{background:#eee7dc;color:#39332c}
-.btn-red{background:#b93d3d;color:white}
-.btn-green{background:#25834e;color:white}
-.hero{padding:65px 7%;background:linear-gradient(110deg,#27221d,#514536);
- color:white;min-height:280px;display:flex;align-items:center}
-.hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
-.hero p{color:#e4d9c8;line-height:2}
+.btn-green{background:var(--green);color:white}
+.btn-red{background:var(--red);color:white}
 .container{max-width:1150px;margin:auto;padding:35px 18px}
 .section-title{font-size:23px;margin:0 0 22px}
 .categories{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
-.cat{border:1px solid var(--line);background:white;padding:9px 18px;
- border-radius:30px}
+.cat{
+ border:1px solid var(--line);
+ background:white;
+ padding:9px 18px;
+ border-radius:30px
+}
 .cat.active{background:var(--black);color:white}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.product{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden}
-.product-img{height:225px;background:#eee8df;display:flex;
- align-items:center;justify-content:center;color:#968b7b;overflow:hidden}
-.product-img img{width:100%;height:100%;object-fit:cover}
+.products{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px
+}
+.product{
+ background:white;
+ border:1px solid var(--line);
+ border-radius:15px;
+ overflow:hidden
+}
+.product-img{
+ height:260px;
+ background:#f4f0e9;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ overflow:hidden;
+ padding:10px
+}
+.product-img img{
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ display:block
+}
 .product-info{padding:16px}
 .product-info h3{font-size:16px;margin:0 0 10px}
 .price{font-weight:800;color:var(--gold);margin:10px 0}
 .product-info small{color:var(--muted)}
 .product-info button{width:100%;margin-top:12px}
-.info-strip{background:#eee7dc;padding:22px;border-radius:14px;
- line-height:2;margin-top:30px}
-footer{background:#211e1b;color:#eee;padding:30px 6%;text-align:center;
- line-height:2}
-footer a{color:#e1c18c}
-.overlay{display:none;position:fixed;inset:0;background:#0009;
- z-index:30;overflow:auto;padding:18px}
-.modal{background:white;max-width:650px;margin:35px auto;
- border-radius:16px;padding:23px;position:relative}
+.info-strip{
+ background:#eee7dc;
+ padding:22px;
+ border-radius:14px;
+ line-height:2;
+ margin-top:30px
+}
+footer{
+ background:#211e1b;
+ color:#eee;
+ padding:25px;
+ text-align:center;
+ line-height:2
+}
+.overlay{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:#0009;
+ z-index:30;
+ overflow:auto;
+ padding:15px
+}
+.modal{
+ background:white;
+ max-width:650px;
+ margin:25px auto;
+ border-radius:16px;
+ padding:23px;
+ position:relative
+}
 .modal h2{margin-top:0}
-.close{position:absolute;left:15px;top:12px;border:0;
- background:#eee;border-radius:50%;width:35px;height:35px}
+.close{
+ position:absolute;
+ left:15px;
+ top:12px;
+ border:0;
+ background:#eee;
+ border-radius:50%;
+ width:35px;
+ height:35px;
+ font-size:20px
+}
 .field{margin:13px 0}
-.field label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
-.field input,.field textarea,.field select{
- width:100%;padding:12px;border:1px solid var(--line);
- border-radius:9px;background:#fff;outline:none}
-.field textarea{min-height:85px;resize:vertical}
-.row-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.notice{background:#f5efe5;border-radius:10px;padding:12px;
- line-height:1.9;font-size:13px;margin:12px 0}
-.admin-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.admin-table{width:100%;border-collapse:collapse;min-width:650px}
-.admin-table th,.admin-table td{border-bottom:1px solid var(--line);
- padding:11px;text-align:right;font-size:13px;vertical-align:top}
-.table-wrap{overflow:auto}
-.order-card{border:1px solid var(--line);padding:14px;
- border-radius:12px;margin:12px 0}
-.order-card p{margin:5px 0;font-size:14px;line-height:1.8}
-.status{padding:4px 9px;border-radius:20px;background:#eee7dc;
- display:inline-block;font-size:12px}
-.hidden{display:none!important}
-.total-line{display:flex;justify-content:space-between;
- padding:7px 0;border-bottom:1px dashed var(--line)}
+.field label{
+ display:block;
+ font-size:14px;
+ font-weight:700;
+ margin-bottom:6px
+}
+.field input{
+ width:100%;
+ padding:12px;
+ border:1px solid var(--line);
+ border-radius:9px;
+ background:#fff;
+ outline:none
+}
+.notice{
+ background:#f5efe5;
+ border-radius:10px;
+ padding:13px;
+ line-height:2;
+ font-size:14px;
+ margin:12px 0
+}
+.cart-item{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:12px;
+ border-bottom:1px solid var(--line);
+ padding:14px 0
+}
+.cart-item-info{flex:1}
+.cart-item-info b{display:block;font-size:14px}
+.cart-item-info small{color:var(--muted)}
+.qty-control{display:flex;align-items:center;gap:9px}
+.qty-control button{
+ border:0;
+ background:#eee7dc;
+ border-radius:7px;
+ width:30px;
+ height:30px;
+ font-size:18px
+}
+.remove{
+ border:0;
+ background:transparent;
+ color:var(--red);
+ font-size:12px
+}
+.total-line{
+ display:flex;
+ justify-content:space-between;
+ padding:9px 0;
+ border-bottom:1px dashed var(--line)
+}
+.payment-card{
+ background:#28231e;
+ color:white;
+ border-radius:15px;
+ padding:22px;
+ margin:15px 0;
+ text-align:center
+}
+.payment-card .number{
+ font-size:22px;
+ font-weight:800;
+ letter-spacing:2px;
+ margin:15px 0;
+ color:#e7c58d;
+ direction:ltr
+}
+.payment-card small{color:#ddd}
+.choice{
+ display:block;
+ border:1px solid var(--line);
+ padding:13px;
+ border-radius:10px;
+ margin:10px 0;
+ cursor:pointer
+}
+.choice input{margin-left:8px}
+.empty{
+ text-align:center;
+ padding:35px 10px;
+ color:var(--muted)
+}
 @media(max-width:600px){
- header{padding:13px 4%}.logo{font-size:19px}
- nav button{font-size:12px;padding:5px}
- .hero{padding:45px 7%}.row-fields{grid-template-columns:1fr}
+ header{padding:12px 4%}
+ .logo{font-size:19px}
+ .header-btn{font-size:12px;padding:8px}
+ .hero{padding:45px 7%}
  .modal{margin:10px auto;padding:18px}
+ .product-img{height:230px}
+ .cart-item{flex-wrap:wrap}
+ .payment-card .number{font-size:18px}
 }
 </style>
 </head>
+
 <body>
 
 <header>
  <div class="logo">VELORA <span>STYLE</span></div>
- <nav>
-  <button onclick="scrollToProducts()">محصولات</button>
-  <button onclick="openAdmin()">مدیریت فروشگاه</button>
- </nav>
+ <div class="header-actions">
+  <button class="header-btn" onclick="scrollToProducts()">محصولات</button>
+  <button class="header-btn" onclick="openCart()">
+   سبد خرید <span class="cart-count" id="cartCount">۰</span>
+  </button>
+ </div>
 </header>
 
 <section class="hero">
  <div>
   <h1>استایل خاص، انتخاب متفاوت</h1>
-  <p>به فروشگاه Velora Style خوش آمدید.<br>
-  زیبایی در انتخاب‌های ساده و خاص است.</p>
-  <button class="btn btn-gold" onclick="scrollToProducts()">مشاهده محصولات</button>
+  <p>
+   به فروشگاه Velora Style خوش آمدید.<br>
+   زیبایی در انتخاب‌های ساده و خاص است.
+  </p>
+  <button class="btn btn-gold" onclick="scrollToProducts()">
+   مشاهده محصولات
+  </button>
  </div>
 </section>
 
 <main class="container" id="shop">
  <h2 class="section-title">محصولات فروشگاه</h2>
+
  <div class="categories">
-  <button class="cat active" onclick="filterProducts('همه',this)">همه محصولات</button>
-  <button class="cat" onclick="filterProducts('زنانه',this)">زنانه</button>
-  <button class="cat" onclick="filterProducts('مردانه',this)">مردانه</button>
+  <button class="cat active" onclick="filterProducts('همه',this)">
+   همه محصولات
+  </button>
+  <button class="cat" onclick="filterProducts('زنانه',this)">
+   زنانه
+  </button>
+  <button class="cat" onclick="filterProducts('مردانه',this)">
+   مردانه
+  </button>
  </div>
+
  <div class="products" id="products"></div>
 
  <div class="info-strip">
-  <b>راهنمای ثبت سفارش</b><br>
-  محصول موردنظر را انتخاب کنید، مشخصات خود را وارد کنید و سفارش را
-  از طریق واتساپ برای فروشگاه بفرستید.
-  <br>هزینه ارسال: <b>۱۲۰٬۰۰۰ تومان</b>
+  <b>راهنمای خرید</b><br>
+  محصولات موردنظر را به سبد خرید اضافه کنید، تعداد را مشخص کنید
+  و پس از مشاهده مبلغ نهایی، پرداخت را انجام دهید.
+  <br>
+  هزینه ارسال: <b>۱۲۰٬۰۰۰ تومان</b>
  </div>
 </main>
 
 <footer>
  <b>VELORA STYLE</b><br>
- تلفن و واتساپ: 09376077837<br>
- اینستاگرام: @velorastyle.urmia<br>
- <small>تمامی حقوق برای Velora Style محفوظ است.</small>
+ فروشگاه آنلاین پوشاک
 </footer>
 
-<!-- فرم سفارش مشتری -->
+<!-- سبد خرید -->
+<div class="overlay" id="cartOverlay">
+ <div class="modal">
+  <button class="close" onclick="closeModal('cartOverlay')">×</button>
+  <h2>سبد خرید شما</h2>
+
+  <div id="cartItems"></div>
+  <div id="cartSummary"></div>
+
+  <button class="btn btn-gold" id="checkoutButton"
+   onclick="goToCheckout()" style="width:100%;margin-top:15px">
+   ادامه و ثبت سفارش
+  </button>
+ </div>
+</div>
+
+<!-- مشخصات مشتری -->
 <div class="overlay" id="checkoutOverlay">
  <div class="modal">
   <button class="close" onclick="closeModal('checkoutOverlay')">×</button>
-  <h2>ثبت سفارش</h2>
-  <div id="selectedProduct" class="notice"></div>
-  <form id="checkoutForm">
+  <h2>اطلاعات سفارش</h2>
+
+  <div id="checkoutSummary" class="notice"></div>
+
+  <form id="customerForm">
    <div class="field">
     <label>نام و نام خانوادگی</label>
     <input id="customerName" required maxlength="100">
    </div>
-   <div class="row-fields">
-    <div class="field">
-     <label>شماره موبایل</label>
-     <input id="customerPhone" required type="tel"
-      inputmode="tel" maxlength="15" placeholder="09xxxxxxxxx">
-    </div>
-    <div class="field">
-     <label>تعداد</label>
-     <input id="quantity" type="number" min="1" max="20" value="1" required>
-    </div>
+
+   <div class="field">
+    <label>شماره موبایل</label>
+    <input id="customerPhone" required type="tel"
+     inputmode="tel" maxlength="15" placeholder="09xxxxxxxxx">
    </div>
-   <div class="row-fields">
-    <div class="field">
-     <label>سایز</label>
-     <input id="customerSize" placeholder="مثلاً M">
-    </div>
-    <div class="field">
-     <label>رنگ</label>
-     <input id="customerColor" placeholder="رنگ دلخواه">
-    </div>
-   </div>
+
    <div class="field">
     <label>آدرس کامل</label>
-    <textarea id="customerAddress" required maxlength="700"></textarea>
+    <input id="customerAddress" required maxlength="700">
    </div>
-   <div class="field">
-    <label>توضیحات بیشتر (اختیاری)</label>
-    <textarea id="customerNote" maxlength="500"></textarea>
-   </div>
-   <div id="checkoutTotal" class="notice"></div>
+
    <button class="btn btn-gold" type="submit" style="width:100%">
-    ثبت سفارش و ارسال به واتساپ
+    تأیید اطلاعات و ادامه پرداخت
    </button>
   </form>
  </div>
 </div>
 
-<!-- ورود مدیریت -->
-<div class="overlay" id="loginOverlay">
+<!-- پرداخت -->
+<div class="overlay" id="paymentOverlay">
  <div class="modal">
-  <button class="close" onclick="closeModal('loginOverlay')">×</button>
-  <h2>ورود به مدیریت</h2>
-  <div class="notice">رمز اولیه 1234 است. برای تغییر آن مقدار ADMIN_PASSWORD را در کد عوض کنید.</div>
-  <form id="loginForm">
-   <div class="field">
-    <label>رمز مدیریت</label>
-    <input id="adminPassword" type="password" required>
-   </div>
-   <button class="btn btn-dark" style="width:100%">ورود</button>
-  </form>
+  <button class="close" onclick="closeModal('paymentOverlay')">×</button>
+  <h2>پرداخت سفارش</h2>
+
+  <div id="paymentSummary" class="notice"></div>
+
+  <div class="payment-card">
+   <small>شماره کارت جهت واریز</small>
+   <div class="number" id="cardNumberDisplay"></div>
+   <small id="cardOwnerDisplay"></small>
+   <br><br>
+   <button class="btn btn-gold" onclick="copyCard()">
+    کپی شماره کارت
+   </button>
+  </div>
+
+  <div class="notice">
+   مبلغ سفارش را به شماره کارت بالا واریز کنید.
+   پس از پرداخت، روش ارسال رسید را انتخاب کنید.
+  </div>
+
+  <button class="btn btn-gold" onclick="showReceiptOptions()" style="width:100%">
+   پرداخت کردم و ارسال رسید
+  </button>
  </div>
 </div>
 
-<!-- پنل مدیریت -->
-<div class="overlay" id="adminOverlay">
- <div class="modal" style="max-width:950px">
-  <button class="close" onclick="closeModal('adminOverlay')">×</button>
-  <h2>پنل مدیریت Velora Style</h2>
+<!-- روش ارسال رسید -->
+<div class="overlay" id="receiptOverlay">
+ <div class="modal">
+  <button class="close" onclick="closeModal('receiptOverlay')">×</button>
+  <h2>ارسال رسید پرداخت</h2>
+  <p>از چه طریقی می‌خواهید رسید پرداخت را ارسال کنید؟</p>
+
+  <label class="choice">
+   <input type="radio" name="receiptMethod" value="whatsapp" checked>
+   واتساپ
+  </label>
+
+  <label class="choice">
+   <input type="radio" name="receiptMethod" value="sms">
+   پیامک
+  </label>
+
+  <label class="choice">
+   <input type="radio" name="receiptMethod" value="telegram">
+   تلگرام
+  </label>
+
+  <button class="btn btn-green" onclick="sendReceipt()" style="width:100%">
+   ادامه و ارسال رسید
+  </button>
+
   <div class="notice">
-   سفارش‌های این پنل فقط در همین مرورگر ذخیره می‌شوند.
-   سفارش‌های مشتریان را پس از دریافت واتساپ، اینجا دستی ثبت کنید.
+   پس از باز شدن برنامه، تصویر رسید بانکی را به پیام پیوست کنید
+   و آن را ارسال کنید.
   </div>
-  <div class="admin-bar">
-   <button class="btn btn-gold" onclick="showManualForm()">+ ثبت سفارش دستی</button>
-   <button class="btn btn-light" onclick="exportOrders()">خروجی پشتیبان</button>
-   <button class="btn btn-light" onclick="document.getElementById('importFile').click()">بازیابی پشتیبان</button>
-   <button class="btn btn-red" onclick="clearOrders()">حذف همه سفارش‌ها</button>
-   <button class="btn btn-dark" onclick="closeModal('adminOverlay')">بستن پنل</button>
-   <input type="file" id="importFile" accept=".json,application/json"
-    class="hidden" onchange="importOrders(event)">
-  </div>
-  <div id="manualForm" class="notice hidden">
-   <h3>ثبت سفارش دستی</h3>
-   <div class="row-fields">
-    <div class="field"><label>نام مشتری</label><input id="manualName"></div>
-    <div class="field"><label>شماره تماس</label><input id="manualPhone"></div>
-   </div>
-   <div class="row-fields">
-    <div class="field"><label>نام محصول</label><input id="manualProduct"></div>
-    <div class="field"><label>مبلغ کل (تومان)</label><input id="manualPrice" type="number" min="0"></div>
-   </div>
-   <div class="row-fields">
-    <div class="field"><label>تعداد</label><input id="manualQty" type="number" min="1" value="1"></div>
-    <div class="field"><label>وضعیت سفارش</label>
-     <select id="manualStatus">
-      <option>در انتظار پرداخت</option><option>پرداخت شده</option>
-      <option>در حال آماده‌سازی</option><option>ارسال شده</option>
-      <option>تحویل داده شده</option><option>لغو شده</option>
-     </select>
-    </div>
-   </div>
-   <div class="field"><label>آدرس</label><textarea id="manualAddress"></textarea></div>
-   <div class="field"><label>یادداشت</label><textarea id="manualNote"></textarea></div>
-   <button class="btn btn-green" onclick="saveManualOrder()">ذخیره سفارش</button>
-   <button class="btn btn-light" onclick="hideManualForm()">انصراف</button>
-  </div>
-  <div id="ordersList"></div>
  </div>
 </div>
 
 <script>
 /* تنظیمات فروشگاه */
+
 const WHATSAPP_NUMBER = "989376077837";
+const SMS_NUMBER = "09376077837";
+
+const CARD_NUMBER = "6063731211801429";
+const CARD_OWNER = "رضا موسی زاده";
+
+const TELEGRAM_USERNAME = "arrezam";
+
 const SHIPPING_COST = 120000;
-const ADMIN_PASSWORD = "1234";
 
 /*
-  مشخصات محصولات را می‌توانی از همین قسمت تغییر بدهی.
-  برای عکس محصول، مسیر فایل را در image وارد کن.
+ برای اضافه کردن محصولات دیگر، نمونه زیر را
+ کپی و به فهرست محصولات اضافه کن.
+
+ available:true یعنی محصول موجود است.
+ available:false یعنی محصول نمایش داده نمی‌شود.
 */
+
 const productsData = [
  {
-  id:1,name:"محصول زنانه شماره ۱",category:"زنانه",
-  price:0,size:"",color:"",image:"",description:"برای دریافت قیمت و اطلاعات تماس بگیرید"
- },
- {
-  id:2,name:"محصول زنانه شماره ۲",category:"زنانه",
-  price:0,size:"",color:"",image:"",description:"برای دریافت قیمت و اطلاعات تماس بگیرید"
- },
- {
-  id:3,name:"محصول مردانه شماره ۱",category:"مردانه",
-  price:0,size:"",color:"",image:"",description:"برای دریافت قیمت و اطلاعات تماس بگیرید"
- },
- {
-  id:4,name:"محصول مردانه شماره ۲",category:"مردانه",
-  price:0,size:"",color:"",image:"",description:"برای دریافت قیمت و اطلاعات تماس بگیرید"
- },
- {
-  id:5,name:"ست لباس خواب زنانه دوناتی مدل M-127",
-  category:"زنانه",price:930000,size:"M",
-  color:"سفید، صورتی",image:"images/donati.png",
-  description:"ست لباس خواب زنانه دوناتی"
- },
- {
-  id:6,name:"محصول زنانه شماره ۳",category:"زنانه",
-  price:0,size:"",color:"",image:"",description:"برای دریافت قیمت و اطلاعات تماس بگیرید"
+  id:5,
+  name:"ست لباس خواب زنانه دوناتی مدل M-127",
+  category:"زنانه",
+  price:930000,
+  size:"M",
+  color:"سفید، صورتی",
+  image:"images/donati.png",
+  description:"ست لباس خواب زنانه دوناتی",
+  available:true
  }
+
+ // محصول جدید:
+ // ,
+ // {
+ //  id:7,
+ //  name:"نام محصول",
+ //  category:"مردانه",
+ //  price:750000,
+ //  size:"L",
+ //  color:"مشکی",
+ //  image:"images/product7.png",
+ //  description:"توضیحات محصول",
+ //  available:true
+ // }
 ];
 
-let selectedProduct = null;
+let cart = [];
+let currentOrder = null;
 let currentFilter = "همه";
-let orders = loadOrders();
 
-function loadOrders(){
- try{
-  const data = JSON.parse(localStorage.getItem("velora_orders") || "[]");
-  return Array.isArray(data) ? data : [];
- }catch(e){return []}
-}
-function saveOrders(){
- localStorage.setItem("velora_orders",JSON.stringify(orders));
-}
 function money(value){
  return Number(value || 0).toLocaleString("fa-IR")+" تومان";
 }
-function safeText(value){
- return String(value ?? "").replace(/[&<>"']/g,function(c){
-  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];
- });
-}
+
 function scrollToProducts(){
  document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
-function renderProducts(){
- const holder=document.getElementById("products");
- holder.innerHTML="";
- const list=productsData.filter(p=>
-  currentFilter==="همه" || p.category===currentFilter
- );
- list.forEach(p=>{
-  const card=document.createElement("article");
-  card.className="product";
-  const img=document.createElement("div");
-  img.className="product-img";
-  if(p.image){
-   const image=document.createElement("img");
-   image.src=p.image;
-   image.alt=p.name;
-   image.onerror=()=>{img.textContent="تصویر محصول";}
-   img.appendChild(image);
-  }else{
-   img.textContent="تصویر محصول";
-  }
-  const info=document.createElement("div");
-  info.className="product-info";
-  const name=document.createElement("h3");
-  name.textContent=p.name;
-  const desc=document.createElement("small");
-  desc.textContent=p.description || "";
-  const price=document.createElement("div");
-  price.className="price";
-  price.textContent=p.price>0?money(p.price):"استعلام قیمت";
-  const btn=document.createElement("button");
-  btn.className="btn btn-dark";
-  btn.textContent=p.price>0?"ثبت سفارش":"استعلام در واتساپ";
-  btn.onclick=()=>p.price>0?openCheckout(p):askPrice(p);
-  info.append(name,desc,price,btn);
-  card.append(img,info);
-  holder.appendChild(card);
- });
-}
-function filterProducts(category,button){
- currentFilter=category;
- document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active"));
- button.classList.add("active");
- renderProducts();
-}
-function openCheckout(product){
- selectedProduct=product;
- document.getElementById("selectedProduct").textContent=
-  product.name+" | قیمت واحد: "+money(product.price);
- document.getElementById("customerSize").value=product.size || "";
- document.getElementById("customerColor").value=product.color || "";
- document.getElementById("quantity").value=1;
- updateTotal();
- document.getElementById("checkoutOverlay").style.display="block";
-}
-function askPrice(product){
- const message="سلام، درباره محصول "+product.name+
- " از فروشگاه Velora Style اطلاعات و قیمت می‌خواستم.";
- openWhatsApp(message);
-}
-function updateTotal(){
- if(!selectedProduct)return;
- const qty=Math.max(1,Math.min(20,Number(document.getElementById("quantity").value)||1));
- const subtotal=selectedProduct.price*qty;
- document.getElementById("checkoutTotal").textContent=
-  "مبلغ محصولات: "+money(subtotal)+" | هزینه ارسال: "+
-  money(SHIPPING_COST)+" | مبلغ نهایی: "+money(subtotal+SHIPPING_COST);
-}
-document.getElementById("quantity").addEventListener("input",updateTotal);
 
-function openWhatsApp(message){
- const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
- window.open(url,"_blank");
-}
 function closeModal(id){
  document.getElementById(id).style.display="none";
 }
-document.getElementById("checkoutForm").addEventListener("submit",function(e){
- e.preventDefault();
- if(!selectedProduct)return;
- const name=document.getElementById("customerName").value.trim();
- const phone=document.getElementById("customerPhone").value.trim();
- const address=document.getElementById("customerAddress").value.trim();
- const qty=Math.max(1,Math.min(20,Number(document.getElementById("quantity").value)||1));
- if(!name || !phone || !address){
-  alert("لطفاً اطلاعات ضروری را کامل کنید.");return;
- }
- const subtotal=selectedProduct.price*qty;
- const total=subtotal+SHIPPING_COST;
- const tracking="VL"+Date.now().toString().slice(-9);
- const order={
-  id:tracking,name,phone,address,
-  product:selectedProduct.name,
-  qty,
-  size:document.getElementById("customerSize").value.trim(),
-  color:document.getElementById("customerColor").value.trim(),
-  note:document.getElementById("customerNote").value.trim(),
-  subtotal,shipping:SHIPPING_COST,total,
-  status:"در انتظار تأیید",
-  createdAt:new Date().toISOString()
- };
- /*
-  ذخیره در مرورگر مشتری برای مراجعه مجدد.
-  این سفارش خودکار به مرورگر مدیر منتقل نمی‌شود.
- */
- try{
-  const customerOrders=JSON.parse(localStorage.getItem("velora_customer_orders")||"[]");
-  customerOrders.push(order);
-  localStorage.setItem("velora_customer_orders",JSON.stringify(customerOrders));
- }catch(err){}
- const message=
- "🛍️ سفارش جدید Velora Style\n"+
- "کد رهگیری: "+tracking+"\n"+
- "نام: "+name+"\n"+
- "موبایل: "+phone+"\n"+
- "محصول: "+order.product+"\n"+
- "تعداد: "+qty+"\n"+
- "سایز: "+(order.size||"ذکر نشده")+"\n"+
- "رنگ: "+(order.color||"ذکر نشده")+"\n"+
- "آدرس: "+address+"\n"+
- "توضیحات: "+(order.note||"ندارد")+"\n"+
- "مبلغ محصولات: "+money(subtotal)+"\n"+
- "هزینه ارسال: "+money(SHIPPING_COST)+"\n"+
- "مبلغ نهایی: "+money(total);
- closeModal("checkoutOverlay");
- alert("سفارش آماده ارسال است. لطفاً پیام واتساپ را ارسال کنید.");
- openWhatsApp(message);
- this.reset();
-});
 
-/* ورود به مدیریت */
-function openAdmin(){
- document.getElementById("loginOverlay").style.display="block";
+function openModal(id){
+ document.getElementById(id).style.display="block";
 }
-document.getElementById("loginForm").addEventListener("submit",function(e){
- e.preventDefault();
- const pass=document.getElementById("adminPassword").value;
- if(pass===ADMIN_PASSWORD){
-  closeModal("loginOverlay");
-  document.getElementById("adminPassword").value="";
-  document.getElementById("adminOverlay").style.display="block";
-  orders=loadOrders();
-  renderOrders();
- }else{
-  alert("رمز عبور اشتباه است.");
- }
-});
 
-/* مدیریت سفارش‌ها */
-function renderOrders(){
- const holder=document.getElementById("ordersList");
+/* فقط محصولات موجود نمایش داده می‌شوند */
+
+function getAvailableProducts(){
+ return productsData.filter(p =>
+  p.available === true &&
+  Number(p.price) > 0 &&
+  p.image
+ );
+}
+
+function renderProducts(){
+ const holder=document.getElementById("products");
  holder.innerHTML="";
- if(!orders.length){
-  holder.textContent="هنوز سفارشی در پنل ثبت نشده است.";
+
+ const list=getAvailableProducts().filter(p =>
+  currentFilter==="همه" || p.category===currentFilter
+ );
+
+ if(list.length===0){
+  const empty=document.createElement("div");
+  empty.className="empty";
+  empty.textContent="در حال حاضر محصول موجودی در این دسته‌بندی نداریم.";
+  holder.appendChild(empty);
   return;
  }
- orders.slice().reverse().forEach(order=>{
-  const card=document.createElement("div");
-  card.className="order-card";
+
+ list.forEach(p=>{
+  const card=document.createElement("article");
+  card.className="product";
+
+  const imageBox=document.createElement("div");
+  imageBox.className="product-img";
+
+  const img=document.createElement("img");
+  img.src=p.image;
+  img.alt=p.name;
+  img.loading="lazy";
+
+  img.onerror=()=>{
+   card.remove();
+  };
+
+  imageBox.appendChild(img);
+
+  const info=document.createElement("div");
+  info.className="product-info";
+
   const title=document.createElement("h3");
-  title.textContent="سفارش "+order.id;
-  const details=document.createElement("div");
-  details.innerHTML=
-   "<p><b>مشتری:</b> "+safeText(order.name)+"</p>"+
-   "<p><b>تلفن:</b> "+safeText(order.phone)+"</p>"+
-   "<p><b>محصول:</b> "+safeText(order.product)+"</p>"+
-   "<p><b>تعداد:</b> "+safeText(order.qty)+"</p>"+
-   "<p><b>مبلغ:</b> "+money(order.total)+"</p>"+
-   "<p><b>آدرس:</b> "+safeText(order.address)+"</p>"+
-   "<p><b>یادداشت:</b> "+safeText(order.note)+"</p>"+
-   "<p><b>تاریخ:</b> "+safeText(order.createdAt||"")+" </p>";
-  const status=document.createElement("select");
-  [
-   "در انتظار تأیید","در انتظار پرداخت","پرداخت شده",
-   "در حال آماده‌سازی","ارسال شده","تحویل داده شده","لغو شده"
-  ].forEach(s=>{
-   const option=document.createElement("option");
-   option.value=s;option.textContent=s;
-   if(order.status===s)option.selected=true;
-   status.appendChild(option);
-  });
-  status.onchange=()=>{
-   order.status=status.value;saveOrders();
-  };
-  const noteInput=document.createElement("textarea");
-  noteInput.placeholder="یادداشت مدیر";
-  noteInput.value=order.adminNote||"";
-  noteInput.style.cssText="width:100%;margin-top:10px;padding:9px;border:1px solid #ddd;border-radius:8px";
-  const saveNote=document.createElement("button");
-  saveNote.className="btn btn-light";
-  saveNote.textContent="ذخیره یادداشت";
-  saveNote.onclick=()=>{
-   order.adminNote=noteInput.value;saveOrders();
-   alert("یادداشت ذخیره شد.");
-  };
-  const del=document.createElement("button");
-  del.className="btn btn-red";
-  del.textContent="حذف سفارش";
-  del.style.marginRight="8px";
-  del.onclick=()=>{
-   if(confirm("این سفارش حذف شود؟")){
-    orders=orders.filter(o=>o.id!==order.id);
-    saveOrders();renderOrders();
-   }
-  };
-  const statusLabel=document.createElement("p");
-  statusLabel.append("وضعیت: ",status);
-  card.append(title,details,statusLabel,noteInput,saveNote,del);
+  title.textContent=p.name;
+
+  const desc=document.createElement("small");
+  desc.textContent=p.description || "";
+
+  const price=document.createElement("div");
+  price.className="price";
+  price.textContent=money(p.price);
+
+  const btn=document.createElement("button");
+  btn.className="btn btn-dark";
+  btn.textContent="افزودن به سبد خرید";
+  btn.onclick=()=>addToCart(p.id);
+
+  info.append(title,desc,price,btn);
+  card.append(imageBox,info);
   holder.appendChild(card);
  });
 }
 
-/* ثبت سفارش دستی توسط مدیر */
-function showManualForm(){
- document.getElementById("manualForm").classList.remove("hidden");
+function filterProducts(category,button){
+ currentFilter=category;
+
+ document.querySelectorAll(".cat").forEach(b=>{
+  b.classList.remove("active");
+ });
+
+ button.classList.add("active");
+ renderProducts();
 }
-function hideManualForm(){
- document.getElementById("manualForm").classList.add("hidden");
-}
-function saveManualOrder(){
- const name=document.getElementById("manualName").value.trim();
- const phone=document.getElementById("manualPhone").value.trim();
- const product=document.getElementById("manualProduct").value.trim();
- const price=Number(document.getElementById("manualPrice").value);
- const qty=Math.max(1,Number(document.getElementById("manualQty").value)||1);
- if(!name||!phone||!product||!Number.isFinite(price)||price<0){
-  alert("نام، تلفن، محصول و مبلغ را درست وارد کنید.");return;
+
+/* سبد خرید */
+
+function addToCart(id){
+ const product=getAvailableProducts().find(p=>p.id===id);
+ if(!product)return;
+
+ const existing=cart.find(item=>item.id===id);
+
+ if(existing){
+  existing.qty++;
+ }else{
+  cart.push({id,qty:1});
  }
- const order={
+
+ updateCartCount();
+ alert("محصول به سبد خرید اضافه شد.");
+}
+
+function updateCartCount(){
+ const count=cart.reduce((sum,item)=>sum+item.qty,0);
+
+ document.getElementById("cartCount").textContent=
+  count.toLocaleString("fa-IR");
+}
+
+function getCartDetails(){
+ return cart.map(item=>{
+  const product=getAvailableProducts().find(p=>p.id===item.id);
+
+  if(!product)return null;
+
+  return {
+   ...product,
+   qty:item.qty,
+   subtotal:product.price*item.qty
+  };
+ }).filter(Boolean);
+}
+
+function getSubtotal(){
+ return getCartDetails().reduce((sum,item)=>sum+item.subtotal,0);
+}
+
+function getTotal(){
+ return getSubtotal()+SHIPPING_COST;
+}
+
+function openCart(){
+ renderCart();
+ openModal("cartOverlay");
+}
+
+function renderCart(){
+ const holder=document.getElementById("cartItems");
+ const summary=document.getElementById("cartSummary");
+ const details=getCartDetails();
+
+ holder.innerHTML="";
+ summary.innerHTML="";
+
+ if(details.length===0){
+  holder.innerHTML='<div class="empty">سبد خرید شما خالی است.</div>';
+  document.getElementById("checkoutButton").disabled=true;
+  return;
+ }
+
+ document.getElementById("checkoutButton").disabled=false;
+
+ details.forEach(item=>{
+  const row=document.createElement("div");
+  row.className="cart-item";
+
+  const info=document.createElement("div");
+  info.className="cart-item-info";
+
+  const name=document.createElement("b");
+  name.textContent=item.name;
+
+  const price=document.createElement("small");
+  price.textContent=money(item.price)+" برای هر عدد";
+
+  const amount=document.createElement("div");
+  amount.textContent="جمع: "+money(item.subtotal);
+  amount.style.color="#b28b52";
+  amount.style.fontWeight="700";
+  amount.style.fontSize="13px";
+
+  info.append(name,price,amount);
+
+  const controls=document.createElement("div");
+  controls.className="qty-control";
+
+  const minus=document.createElement("button");
+  minus.textContent="−";
+  minus.onclick=()=>changeQty(item.id,-1);
+
+  const qty=document.createElement("b");
+  qty.textContent=item.qty.toLocaleString("fa-IR");
+
+  const plus=document.createElement("button");
+  plus.textContent="+";
+  plus.onclick=()=>changeQty(item.id,1);
+
+  const remove=document.createElement("button");
+  remove.className="remove";
+  remove.textContent="حذف";
+  remove.onclick=()=>removeFromCart(item.id);
+
+  controls.append(minus,qty,plus,remove);
+  row.append(info,controls);
+  holder.appendChild(row);
+ });
+
+ summary.innerHTML=
+  '<div class="total-line"><span>جمع محصولات</span><b>'+
+  money(getSubtotal())+'</b></div>'+
+  '<div class="total-line"><span>هزینه ارسال</span><b>'+
+  money(SHIPPING_COST)+'</b></div>'+
+  '<div class="total-line"><span>مبلغ قابل پرداخت</span><b>'+
+  money(getTotal())+'</b></div>';
+}
+
+function changeQty(id,change){
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+
+ item.qty+=change;
+
+ if(item.qty<=0){
+  cart=cart.filter(x=>x.id!==id);
+ }
+
+ updateCartCount();
+ renderCart();
+}
+
+function removeFromCart(id){
+ cart=cart.filter(x=>x.id!==id);
+ updateCartCount();
+ renderCart();
+}
+
+/* فرم اطلاعات مشتری */
+
+function goToCheckout(){
+ if(getCartDetails().length===0)return;
+
+ closeModal("cartOverlay");
+
+ document.getElementById("checkoutSummary").textContent=
+  "جمع محصولات: "+money(getSubtotal())+
+  " | هزینه ارسال: "+money(SHIPPING_COST)+
+  " | مبلغ نهایی: "+money(getTotal());
+
+ openModal("checkoutOverlay");
+}
+
+document.getElementById("customerForm").addEventListener("submit",function(e){
+ e.preventDefault();
+
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+
+ if(!name||!phone||!address){
+  alert("لطفاً اطلاعات را کامل کنید.");
+  return;
+ }
+
+ const details=getCartDetails();
+
+ if(details.length===0){
+  alert("سبد خرید خالی است.");
+  return;
+ }
+
+ currentOrder={
   id:"VL"+Date.now().toString().slice(-9),
-  name,phone,product,qty,
-  address:document.getElementById("manualAddress").value.trim(),
-  note:document.getElementById("manualNote").value.trim(),
-  subtotal:price,shipping:0,total:price,
-  status:document.getElementById("manualStatus").value,
-  createdAt:new Date().toISOString(),
-  adminNote:""
+  name,
+  phone,
+  address,
+  items:details,
+  subtotal:getSubtotal(),
+  shipping:SHIPPING_COST,
+  total:getTotal(),
+  createdAt:new Date().toISOString()
  };
- orders.push(order);saveOrders();renderOrders();
- ["manualName","manualPhone","manualProduct","manualPrice",
-  "manualAddress","manualNote"].forEach(id=>document.getElementById(id).value="");
- document.getElementById("manualQty").value=1;
- hideManualForm();
- alert("سفارش با موفقیت در این مرورگر ذخیره شد.");
+
+ closeModal("checkoutOverlay");
+
+ document.getElementById("paymentSummary").textContent=
+  "کد سفارش: "+currentOrder.id+
+  " | مبلغ قابل پرداخت: "+money(currentOrder.total);
+
+ document.getElementById("cardNumberDisplay").textContent=CARD_NUMBER;
+ document.getElementById("cardOwnerDisplay").textContent=CARD_OWNER;
+
+ openModal("paymentOverlay");
+});
+
+/* کپی شماره کارت */
+
+function copyCard(){
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(CARD_NUMBER)
+   .then(()=>alert("شماره کارت کپی شد."))
+   .catch(()=>alert("شماره کارت را دستی کپی کنید."));
+ }else{
+  alert("شماره کارت: "+CARD_NUMBER);
+ }
 }
 
-/* پشتیبان‌گیری */
-function exportOrders(){
- const data=JSON.stringify(orders,null,2);
- const blob=new Blob([data],{type:"application/json"});
- const url=URL.createObjectURL(blob);
- const a=document.createElement("a");
- a.href=url;a.download="velora-orders-backup.json";
- a.click();URL.revokeObjectURL(url);
-}
-function importOrders(event){
- const file=event.target.files[0];
- if(!file)return;
- const reader=new FileReader();
- reader.onload=function(){
-  try{
-   const data=JSON.parse(reader.result);
-   if(!Array.isArray(data))throw new Error("invalid");
-   if(!confirm("سفارش‌های فایل وارد پنل شوند؟"))return;
-   const valid=data.filter(o=>o && typeof o==="object" && o.id);
-   const map=new Map(orders.map(o=>[o.id,o]));
-   valid.forEach(o=>map.set(o.id,o));
-   orders=Array.from(map.values());
-   saveOrders();renderOrders();
-   alert("بازیابی با موفقیت انجام شد.");
-  }catch(e){alert("فایل پشتیبان معتبر نیست.");}
-  event.target.value="";
- };
- reader.readAsText(file);
-}
-function clearOrders(){
- if(!confirm("تمام سفارش‌های ذخیره‌شده حذف شوند؟"))return;
- if(!confirm("این کار قابل بازگشت نیست. مطمئن هستید؟"))return;
- orders=[];saveOrders();renderOrders();
+/* ارسال رسید */
+
+function showReceiptOptions(){
+ if(!currentOrder)return;
+
+ closeModal("paymentOverlay");
+ openModal("receiptOverlay");
 }
 
-/* شروع */
+function makeOrderMessage(){
+ const o=currentOrder;
+
+ const items=o.items.map(item=>
+  item.name+" × "+item.qty+" = "+money(item.subtotal)
+ ).join("\n");
+
+ return "سلام، رسید پرداخت سفارش Velora Style\n"+
+ "کد سفارش: "+o.id+"\n"+
+ "نام: "+o.name+"\n"+
+ "موبایل: "+o.phone+"\n"+
+ "آدرس: "+o.address+"\n"+
+ "محصولات:\n"+items+"\n"+
+ "جمع محصولات: "+money(o.subtotal)+"\n"+
+ "هزینه ارسال: "+money(o.shipping)+"\n"+
+ "مبلغ پرداختی: "+money(o.total)+"\n"+
+ "رسید پرداخت را به این پیام پیوست می‌کنم.";
+}
+
+function sendReceipt(){
+ if(!currentOrder)return;
+
+ const method=document.querySelector(
+  'input[name="receiptMethod"]:checked'
+ ).value;
+
+ const message=makeOrderMessage();
+
+ if(method==="whatsapp"){
+  const url="https://wa.me/"+WHATSAPP_NUMBER+
+   "?text="+encodeURIComponent(message);
+
+  window.open(url,"_blank");
+ }
+
+ if(method==="sms"){
+  const url="sms:"+SMS_NUMBER+
+   "?body="+encodeURIComponent(message);
+
+  window.location.href=url;
+ }
+
+ if(method==="telegram"){
+  const url="https://t.me/"+TELEGRAM_USERNAME+
+   "?text="+encodeURIComponent(message);
+
+  window.open(url,"_blank");
+ }
+
+ cart=[];
+ updateCartCount();
+
+ closeModal("receiptOverlay");
+
+ alert(
+  "پیام سفارش آماده شد. لطفاً در برنامه بازشده، تصویر رسید بانکی را پیوست و پیام را ارسال کنید."
+ );
+
+ currentOrder=null;
+}
+
+/* شروع فروشگاه */
+
 renderProducts();
+updateCartCount();
+
 </script>
 </body>
 </html>
