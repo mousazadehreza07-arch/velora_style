@@ -1,4 +1,4 @@
-```html
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -7,92 +7,666 @@
 <meta name="description" content="Velora Style؛ فروشگاه آنلاین پوشاک زنانه و مردانه">
 <meta name="theme-color" content="#171512">
 <title>Velora Style | فروشگاه پوشاک</title>
+
 <style>
-:root{--ink:#171512;--muted:#77716a;--cream:#f7f3ed;--paper:#fffdfa;--gold:#b68b62;--line:#e9e1d7}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
-a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
-.top{background:var(--ink);color:#f7f3ed;text-align:center;padding:8px 12px;font-size:12px;letter-spacing:.2px}
-header{border-bottom:1px solid var(--line);background:#fffdfa;position:sticky;top:0;z-index:5}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{font-family:Georgia,serif;font-size:29px;letter-spacing:1px;font-weight:bold;direction:ltr}.brand span{display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:10px;letter-spacing:6px;color:var(--gold);font-weight:normal;margin-top:-5px}
-.links{display:flex;gap:26px;font-size:14px}.links a:hover{color:var(--gold)}
-.hero{background:var(--cream);padding:76px 0 70px;overflow:hidden}
-.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
-.eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold}
-h1{font-size:clamp(34px,5vw,58px);line-height:1.35;margin:12px 0 18px;font-weight:500}
-.hero p{color:var(--muted);max-width:520px;margin:0 0 26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:white;padding:12px 25px;border:1px solid var(--ink);font-size:13px;transition:.2s}
-.btn:hover{background:var(--gold);border-color:var(--gold)}
-.hero-art{min-height:330px;background:linear-gradient(135deg,#d9c7b4,#f0e7dc 48%,#a68b73);position:relative;display:flex;align-items:center;justify-content:center}
-.hero-art:before{content:"";position:absolute;width:66%;height:78%;border:1px solid rgba(255,255,255,.8);transform:rotate(-7deg)}
-.hero-art:after{content:"V";font:italic 210px Georgia,serif;color:rgba(255,255,255,.8)}
-.art-label{position:absolute;bottom:20px;left:22px;color:#fff;font:italic 17px Georgia,serif;direction:ltr}
-section{padding:66px 0}.section-head{text-align:center;margin-bottom:30px}.section-head h2{font-size:27px;font-weight:500;margin:0 0 6px}.section-head p{color:var(--muted);font-size:13px;margin:0}
-.categories{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.cat{padding:28px;background:#eee6dc;min-height:145px;display:flex;align-items:end;justify-content:space-between}.cat:nth-child(2){background:#e7e1da}.cat strong{font-size:21px;font-weight:500}.cat small{display:block;color:var(--muted);font-size:12px}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.product{border:1px solid var(--line);background:#fff}
-.product-art{height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#eee7df,#d5c4b3);font-size:62px}
-.product:nth-child(2) .product-art{background:linear-gradient(145deg,#e5e1dc,#bdb5aa)}
-.product:nth-child(3) .product-art{background:linear-gradient(145deg,#e8d9d0,#c8a995)}
-.product:nth-child(4) .product-art{background:linear-gradient(145deg,#e5e3de,#b7b2a8)}
-.product:nth-child(5) .product-art{background:linear-gradient(145deg,#e9dfd2,#c5ae98)}
-.product:nth-child(6) .product-art{background:linear-gradient(145deg,#dedbd6,#aaa49a)}
-.product-info{padding:15px}.product-info h3{font-size:15px;font-weight:500;margin:0 0 4px}.product-info p{font-size:12px;color:var(--muted);margin:0 0 12px}
-.product-info a{font-size:12px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:3px}
-.notice{background:var(--cream);padding:15px 18px;text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
-.about{background:var(--ink);color:#fff;padding:52px 0}.about-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.about p{color:#c9c1b8;max-width:650px;font-size:14px}
-.contact{background:var(--cream);text-align:center}.contact h2{font-size:28px;font-weight:500;margin:0 0 8px}.contact p{color:var(--muted);font-size:14px}
-.contact-handle{display:inline-block;margin:12px 0 22px;padding:10px 18px;border:1px solid var(--gold);direction:ltr;color:var(--ink)}
-footer{background:#111;color:#bdb5ac;text-align:center;padding:24px 12px;font-size:11px}footer strong{color:#fff;font-family:Georgia,serif;direction:ltr;display:block;font-size:18px;margin-bottom:5px}
-@media(max-width:760px){.links{gap:12px;font-size:12px}.nav{height:68px}.brand{font-size:24px}.hero{padding:48px 0}.hero-inner{grid-template-columns:1fr;gap:28px}.hero-art{min-height:230px}.hero-art:after{font-size:160px}.categories{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product-art{height:155px}.about-inner{display:block}}
-@media(max-width:420px){.links{gap:9px}.links a{font-size:11px}.products{grid-template-columns:1fr 1fr}.product-art{height:130px}}
+:root{
+--ink:#171512;
+--muted:#77716a;
+--cream:#f7f3ed;
+--paper:#fffdfa;
+--gold:#b68b62;
+--line:#e9e1d7;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:Tahoma,Arial,sans-serif;
+line-height:1.8
+}
+
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,92%);margin:auto}
+
+.top{
+background:var(--ink);
+color:#f7f3ed;
+text-align:center;
+padding:8px 12px;
+font-size:12px;
+}
+
+header{
+border-bottom:1px solid var(--line);
+background:#fffdfa;
+position:sticky;
+top:0;
+z-index:5
+}
+
+.nav{
+height:78px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:18px
+}
+
+.brand{
+font-family:Georgia,serif;
+font-size:29px;
+letter-spacing:1px;
+font-weight:bold;
+direction:ltr
+}
+
+.brand span{
+display:block;
+text-align:center;
+font-family:Tahoma,sans-serif;
+font-size:10px;
+letter-spacing:6px;
+color:var(--gold);
+font-weight:normal;
+margin-top:-5px
+}
+
+.links{display:flex;gap:26px;font-size:14px}
+.links a:hover{color:var(--gold)}
+
+.hero{
+background:var(--cream);
+padding:76px 0 70px;
+overflow:hidden
+}
+
+.hero-inner{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+align-items:center;
+gap:48px
+}
+
+.eyebrow{
+color:var(--gold);
+font-size:12px;
+letter-spacing:2px;
+font-weight:bold
+}
+
+h1{
+font-size:clamp(34px,5vw,58px);
+line-height:1.35;
+margin:12px 0 18px;
+font-weight:500
+}
+
+.hero p{
+color:var(--muted);
+max-width:520px;
+margin:0 0 26px
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+background:var(--ink);
+color:white;
+padding:12px 25px;
+border:1px solid var(--ink);
+font-size:13px;
+transition:.2s
+}
+
+.btn:hover{
+background:var(--gold);
+border-color:var(--gold)
+}
+
+.hero-art{
+min-height:330px;
+background:linear-gradient(135deg,#d9c7b4,#f0e7dc 48%,#a68b73);
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.hero-art:before{
+content:"";
+position:absolute;
+width:66%;
+height:78%;
+border:1px solid rgba(255,255,255,.8);
+transform:rotate(-7deg)
+}
+
+.hero-art:after{
+content:"V";
+font:italic 210px Georgia,serif;
+color:rgba(255,255,255,.8)
+}
+
+.art-label{
+position:absolute;
+bottom:20px;
+left:22px;
+color:#fff;
+font:italic 17px Georgia,serif;
+direction:ltr
+}
+
+section{padding:66px 0}
+
+.section-head{
+text-align:center;
+margin-bottom:30px
+}
+
+.section-head h2{
+font-size:27px;
+font-weight:500;
+margin:0 0 6px
+}
+
+.section-head p{
+color:var(--muted);
+font-size:13px;
+margin:0
+}
+
+.categories{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
+}
+
+.cat{
+padding:28px;
+background:#eee6dc;
+min-height:145px;
+display:flex;
+align-items:end;
+justify-content:space-between
+}
+
+.cat:nth-child(2){background:#e7e1da}
+.cat strong{font-size:21px;font-weight:500}
+.cat small{display:block;color:var(--muted);font-size:12px}
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
+}
+
+.product{
+border:1px solid var(--line);
+background:#fff;
+overflow:hidden;
+transition:.25s
+}
+
+.product:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 22px rgba(0,0,0,.08)
+}
+
+.product-art{
+height:220px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(145deg,#eee7df,#d5c4b3);
+font-size:62px;
+overflow:hidden
+}
+
+/* تصویر محصول لباس خواب */
+.product-art img{
+width:100%;
+height:100%;
+display:block;
+object-fit:contain;
+background:#fff
+}
+
+.product:nth-child(2) .product-art{
+background:linear-gradient(145deg,#e5e1dc,#bdb5aa)
+}
+
+.product:nth-child(3) .product-art{
+background:linear-gradient(145deg,#e8d9d0,#c8a995)
+}
+
+.product:nth-child(4) .product-art{
+background:linear-gradient(145deg,#e5e3de,#b7b2a8)
+}
+
+.product:nth-child(5) .product-art{
+background:#fff
+}
+
+.product:nth-child(6) .product-art{
+background:linear-gradient(145deg,#dedbd6,#aaa49a)
+}
+
+.product-info{padding:15px}
+
+.product-info h3{
+font-size:15px;
+font-weight:500;
+margin:0 0 4px
+}
+
+.product-info p{
+font-size:12px;
+color:var(--muted);
+margin:0 0 12px
+}
+
+.product-info a{
+font-size:12px;
+color:var(--gold);
+border-bottom:1px solid var(--gold);
+padding-bottom:3px
+}
+
+/* قیمت محصول ویژه */
+.product-price{
+font-size:17px!important;
+color:#b33b66!important;
+font-weight:bold;
+margin:8px 0!important
+}
+
+.product-info .order-btn{
+display:block;
+background:var(--ink);
+color:white;
+border:0;
+padding:11px;
+text-align:center;
+margin-top:12px;
+font-size:12px;
+transition:.2s
+}
+
+.product-info .order-btn:hover{
+background:var(--gold)
+}
+
+.notice{
+background:var(--cream);
+padding:15px 18px;
+text-align:center;
+color:var(--muted);
+font-size:12px;
+margin-top:22px
+}
+
+.about{
+background:var(--ink);
+color:#fff;
+padding:52px 0
+}
+
+.about-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px
+}
+
+.about p{
+color:#c9c1b8;
+max-width:650px;
+font-size:14px
+}
+
+.contact{
+background:var(--cream);
+text-align:center
+}
+
+.contact h2{
+font-size:28px;
+font-weight:500;
+margin:0 0 8px
+}
+
+.contact p{
+color:var(--muted);
+font-size:14px
+}
+
+.contact-handle{
+display:inline-block;
+margin:12px 0 22px;
+padding:10px 18px;
+border:1px solid var(--gold);
+direction:ltr;
+color:var(--ink)
+}
+
+footer{
+background:#111;
+color:#bdb5ac;
+text-align:center;
+padding:24px 12px;
+font-size:11px
+}
+
+footer strong{
+color:#fff;
+font-family:Georgia,serif;
+direction:ltr;
+display:block;
+font-size:18px;
+margin-bottom:5px
+}
+
+@media(max-width:760px){
+
+.links{gap:12px;font-size:12px}
+.nav{height:68px}
+.brand{font-size:24px}
+
+.hero{padding:48px 0}
+
+.hero-inner{
+grid-template-columns:1fr;
+gap:28px
+}
+
+.hero-art{min-height:230px}
+.hero-art:after{font-size:160px}
+
+.categories{grid-template-columns:1fr}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.product-art{height:155px}
+.about-inner{display:block}
+}
+
+@media(max-width:420px){
+
+.links{gap:9px}
+.links a{font-size:11px}
+
+.products{grid-template-columns:1fr 1fr}
+.product-art{height:130px}
+
+}
 </style>
 </head>
-<body>
-<div class="top">استایل خودت را پیدا کن؛ انتخابی برای هر روز و هر سلیقه</div>
-<header><div class="wrap nav">
-<a class="brand" href="#">VELORA<span>STYLE</span></a>
-<nav class="links"><a href="#home">خانه</a><a href="#categories">دسته‌بندی</a><a href="#products">محصولات</a><a href="#contact">تماس با ما</a></nav>
-</div></header>
-<main>
-<section class="hero" id="home"><div class="wrap hero-inner">
-<div><div class="eyebrow">VELORA STYLE · URMIA</div>
-<h1>استایل خاص تو،<br>از اینجا شروع می‌شود.</h1>
-<p>به Velora Style خوش آمدید؛ مجموعه‌ای برای انتخاب پوشاک زنانه و مردانه با نگاهی ساده، امروزی و شیک.</p>
-<a class="btn" href="#products">مشاهده محصولات</a></div>
-<div class="hero-art"><div class="art-label">Wear your confidence</div></div>
-</div></section>
-<section id="categories"><div class="wrap"><div class="section-head"><h2>دسته‌بندی‌ها</h2><p>برای استایل‌های متفاوت، انتخاب‌های متنوع</p></div>
-<div class="categories"><a class="cat" href="#products"><div><strong>پوشاک زنانه</strong><small>Women's Collection</small></div><span>↙</span></a>
-<a class="cat" href="#products"><div><strong>پوشاک مردانه</strong><small>Men's Collection</small></div><span>↙</span></a></div></div></section>
-<section id="products"><div class="wrap"><div class="section-head"><h2>منتخب Velora</h2><p>نمونه چیدمان محصولات فروشگاه</p></div>
-<div class="products">
-<article class="product"><div class="product-art">✧</div><div class="product-info"><h3>مانتو و پوشاک زنانه</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-<article class="product"><div class="product-art">◈</div><div class="product-info"><h3>پیراهن مردانه</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-<article class="product"><div class="product-art">◇</div><div class="product-info"><h3>استایل روزمره زنانه</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-<article class="product"><div class="product-art">✦</div><div class="product-info"><h3>تیشرت و پولوشرت</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-<article class="product"><div class="product-art">✧</div><div class="product-info"><h3>ست و لباس راحتی</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-<article class="product"><div class="product-art">◈</div><div class="product-info"><h3>پوشاک مردانه</h3><p>قیمت‌ها متغیر است؛ برای استعلام قیمت و موجودی تماس بگیرید.</p><a href="tel:09376077837">استعلام قیمت</a></div></article>
-</div><div class="notice">توجه: این‌ها نمونه‌های نمایشی برای قالب سایت هستند. پیش از معرفی رسمی فروشگاه، عکس واقعی، نام دقیق، قیمت و موجودی کالاها را جایگزین کنید.</div>
-</div></section>
-<section class="about"><div class="wrap about-inner"><div><div class="eyebrow">ABOUT US</div><h2 style="font-weight:500">درباره Velora Style</h2><p>Velora Style فروشگاه پوشاک زنانه و مردانه در ارومیه است. قیمت محصولات متغیر است؛ برای استعلام قیمت روز، سایز و موجودی با شماره 09376077837 تماس بگیرید.</p></div><div class="brand">VELORA<span>STYLE</span></div></div></section>
-<section class="contact" id="contact"><div class="wrap"><h2>با ما در ارتباط باشید</h2><p>قیمت محصولات متغیر است. برای اطلاع از قیمت روز، سایزبندی و موجودی با ما تماس بگیرید یا در اینستاگرام پیام دهید.</p>
-<a class="contact-handle" href="tel:09376077837" dir="ltr">0937 607 7837</a><br>
-<a class="btn" href="tel:09376077837">تماس با فروشگاه</a>
-<p><a href="https://www.instagram.com/velorastyle.urmia/" target="_blank" rel="noopener">@velorastyle.urmia</a></p>
-</div></section>
-</main>
-<footer><strong>VELORA STYLE</strong>© تمامی حقوق برای Velora Style محفوظ است.</footer>
 
-<!-- Velora Style Shopping -->
-<div id="velora-cart" style="position:fixed;bottom:20px;left:20px;z-index:9999">
-  <button onclick="alert('سبد خرید فروشگاه به‌زودی فعال می‌شود')"
-  style="background:#171512;color:white;border:0;padding:15px 25px;cursor:pointer;font-family:tahoma">
-    🛍️ سبد خرید من
-  </button>
+<body>
+
+<div class="top">
+استایل خودت را پیدا کن؛ انتخابی برای هر روز و هر سلیقه
+</div>
+
+<header>
+<div class="wrap nav">
+
+<a class="brand" href="#">
+VELORA
+<span>STYLE</span>
+</a>
+
+<nav class="links">
+<a href="#home">خانه</a>
+<a href="#categories">دسته‌بندی</a>
+<a href="#products">محصولات</a>
+<a href="#contact">تماس با ما</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="wrap hero-inner">
+
+<div>
+<div class="eyebrow">VELORA STYLE · URMIA</div>
+
+<h1>
+استایل خاص تو،
+<br>
+از اینجا شروع می‌شود.
+</h1>
+
+<p>
+به Velora Style خوش آمدید؛ مجموعه‌ای برای انتخاب پوشاک زنانه و مردانه با نگاهی ساده، امروزی و شیک.
+</p>
+
+<a class="btn" href="#products">مشاهده محصولات</a>
+</div>
+
+<div class="hero-art">
+<div class="art-label">Wear your confidence</div>
+</div>
+
+</div>
+</section>
+
+<section id="categories">
+<div class="wrap">
+
+<div class="section-head">
+<h2>دسته‌بندی‌ها</h2>
+<p>برای استایل‌های متفاوت، انتخاب‌های متنوع</p>
+</div>
+
+<div class="categories">
+
+<a class="cat" href="#products">
+<div>
+<strong>پوشاک زنانه</strong>
+<small>Women's Collection</small>
+</div>
+<span>↙</span>
+</a>
+
+<a class="cat" href="#products">
+<div>
+<strong>پوشاک مردانه</strong>
+<small>Men's Collection</small>
+</div>
+<span>↙</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<section id="products">
+<div class="wrap">
+
+<div class="section-head">
+<h2>منتخب Velora</h2>
+<p>جدیدترین انتخاب‌های فروشگاه</p>
+</div>
+
+<div class="products">
+
+<!-- محصول اول -->
+<article class="product">
+<div class="product-art">✧</div>
+<div class="product-info">
+<h3>مانتو و پوشاک زنانه</h3>
+<p>برای استعلام قیمت و موجودی تماس بگیرید.</p>
+<a href="tel:09376077837">استعلام قیمت</a>
+</div>
+</article>
+
+<!-- محصول دوم -->
+<article class="product">
+<div class="product-art">◈</div>
+<div class="product-info">
+<h3>پیراهن مردانه</h3>
+<p>برای استعلام قیمت و موجودی تماس بگیرید.</p>
+<a href="tel:09376077837">استعلام قیمت</a>
+</div>
+</article>
+
+<!-- محصول سوم -->
+<article class="product">
+<div class="product-art">◇</div>
+<div class="product-info">
+<h3>استایل روزمره زنانه</h3>
+<p>برای استعلام قیمت و موجودی تماس بگیرید.</p>
+<a href="tel:09376077837">استعلام قیمت</a>
+</div>
+</article>
+
+<!-- محصول چهارم -->
+<article class="product">
+<div class="product-art">✦</div>
+<div class="product-info">
+<h3>تیشرت و پولوشرت</h3>
+<p>برای استعلام قیمت و موجودی تماس بگیرید.</p>
+<a href="tel:09376077837">استعلام قیمت</a>
+</div>
+</article>
+
+<!-- محصول پنجم: لباس خواب دوناتی -->
+<article class="product">
+
+<div class="product-art">
+<img
+src="https://www.picofile.com/f/27oQd5mlTO/مدل-ژست-گرفته-با-لباس-خواب-دوناتی-1.png"
+alt="ست لباس خواب زنانه دوناتی مدل M-127"
+loading="lazy"
+>
+</div>
+
+<div class="product-info">
+
+<h3>ست لباس خواب زنانه دوناتی</h3>
+
+<p class="product-price">
+۹۳۰٬۰۰۰ تومان
+</p>
+
+<p>مدل: M-127</p>
+
+<p>سایز: M</p>
+
+<p>رنگ‌بندی: سفید و صورتی</p>
+
+<a class="order-btn" href="tel:09376077837">
+سفارش و استعلام موجودی
+</a>
+
+</div>
+</article>
+
+<!-- محصول ششم -->
+<article class="product">
+<div class="product-art">◈</div>
+<div class="product-info">
+<h3>پوشاک مردانه</h3>
+<p>برای استعلام قیمت و موجودی تماس بگیرید.</p>
+<a href="tel:09376077837">استعلام قیمت</a>
+</div>
+</article>
+
+</div>
+
+<div class="notice">
+برای اطلاع از قیمت روز، سایزبندی و موجودی محصولات با فروشگاه تماس بگیرید.
+</div>
+
+</div>
+</section>
+
+<section class="about">
+<div class="wrap about-inner">
+
+<div>
+<div class="eyebrow">ABOUT US</div>
+
+<h2 style="font-weight:500">
+درباره Velora Style
+</h2>
+
+<p>
+Velora Style فروشگاه پوشاک زنانه و مردانه در ارومیه است.
+برای استعلام قیمت روز، سایز و موجودی با شماره 09376077837 تماس بگیرید.
+</p>
+</div>
+
+<div class="brand">
+VELORA
+<span>STYLE</span>
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+
+<h2>با ما در ارتباط باشید</h2>
+
+<p>
+برای اطلاع از قیمت روز، سایزبندی و موجودی با ما تماس بگیرید یا در اینستاگرام پیام دهید.
+</p>
+
+<a class="contact-handle"
+href="tel:09376077837"
+dir="ltr">
+0937 607 7837
+</a>
+
+<br>
+
+<a class="btn" href="tel:09376077837">
+تماس با فروشگاه
+</a>
+
+<p>
+<a href="https://www.instagram.com/velorastyle.urmia/"
+target="_blank"
+rel="noopener">
+@velorastyle.urmia
+</a>
+</p>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<strong>VELORA STYLE</strong>
+© تمامی حقوق برای Velora Style محفوظ است.
+</footer>
+
+<!-- دکمه سبد خرید -->
+<div id="velora-cart"
+style="position:fixed;bottom:20px;left:20px;z-index:9999">
+
+<button
+onclick="alert('سبد خرید فروشگاه به‌زودی فعال می‌شود')"
+style="background:#171512;color:white;border:0;padding:15px 25px;cursor:pointer;font-family:tahoma">
+
+🛍️ سبد خرید من
+
+</button>
 </div>
 
 </body>
 </html>
-```
