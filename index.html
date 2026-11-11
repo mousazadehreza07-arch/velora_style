@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -16,383 +17,227 @@
 --gold:#b68b62;
 --line:#e9e1d7;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-margin:0;
-background:var(--paper);
-color:var(--ink);
-font-family:Tahoma,Arial,sans-serif;
-line-height:1.8
+margin:0;background:var(--paper);color:var(--ink);
+font-family:Tahoma,Arial,sans-serif;line-height:1.8
 }
-
 a{color:inherit;text-decoration:none}
+button,input,textarea,select{font-family:inherit}
+button{cursor:pointer}
 .wrap{width:min(1160px,92%);margin:auto}
-
 .top{
-background:var(--ink);
-color:#f7f3ed;
-text-align:center;
-padding:8px 12px;
-font-size:12px;
+background:var(--ink);color:#f7f3ed;text-align:center;
+padding:8px 12px;font-size:12px
 }
-
 header{
-border-bottom:1px solid var(--line);
-background:#fffdfa;
-position:sticky;
-top:0;
-z-index:5
+border-bottom:1px solid var(--line);background:#fffdfa;
+position:sticky;top:0;z-index:5
 }
-
 .nav{
-height:78px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:18px
+height:78px;display:flex;align-items:center;
+justify-content:space-between;gap:18px
 }
-
 .brand{
-font-family:Georgia,serif;
-font-size:29px;
-letter-spacing:1px;
-font-weight:bold;
-direction:ltr
+font-family:Georgia,serif;font-size:29px;letter-spacing:1px;
+font-weight:bold;direction:ltr
 }
-
 .brand span{
-display:block;
-text-align:center;
-font-family:Tahoma,sans-serif;
-font-size:10px;
-letter-spacing:6px;
-color:var(--gold);
-font-weight:normal;
-margin-top:-5px
+display:block;text-align:center;font-family:Tahoma,sans-serif;
+font-size:10px;letter-spacing:6px;color:var(--gold);
+font-weight:normal;margin-top:-5px
 }
-
 .links{display:flex;gap:26px;font-size:14px}
 .links a:hover{color:var(--gold)}
-
 .hero{
-background:var(--cream);
-padding:76px 0 70px;
-overflow:hidden
+background:var(--cream);padding:76px 0 70px;overflow:hidden
 }
-
 .hero-inner{
-display:grid;
-grid-template-columns:1.05fr .95fr;
-align-items:center;
-gap:48px
+display:grid;grid-template-columns:1.05fr .95fr;
+align-items:center;gap:48px
 }
-
 .eyebrow{
-color:var(--gold);
-font-size:12px;
-letter-spacing:2px;
-font-weight:bold
+color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold
 }
-
 h1{
-font-size:clamp(34px,5vw,58px);
-line-height:1.35;
-margin:12px 0 18px;
-font-weight:500
+font-size:clamp(34px,5vw,58px);line-height:1.35;
+margin:12px 0 18px;font-weight:500
 }
-
-.hero p{
-color:var(--muted);
-max-width:520px;
-margin:0 0 26px
-}
-
+.hero p{color:var(--muted);max-width:520px;margin:0 0 26px}
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-background:var(--ink);
-color:white;
-padding:12px 25px;
-border:1px solid var(--ink);
-font-size:13px;
-transition:.2s
+display:inline-flex;align-items:center;justify-content:center;
+background:var(--ink);color:white;padding:12px 25px;
+border:1px solid var(--ink);font-size:13px;transition:.2s
 }
-
-.btn:hover{
-background:var(--gold);
-border-color:var(--gold)
-}
-
+.btn:hover{background:var(--gold);border-color:var(--gold)}
 .hero-art{
 min-height:330px;
 background:linear-gradient(135deg,#d9c7b4,#f0e7dc 48%,#a68b73);
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center
+position:relative;display:flex;align-items:center;justify-content:center
 }
-
 .hero-art:before{
-content:"";
-position:absolute;
-width:66%;
-height:78%;
-border:1px solid rgba(255,255,255,.8);
-transform:rotate(-7deg)
+content:"";position:absolute;width:66%;height:78%;
+border:1px solid rgba(255,255,255,.8);transform:rotate(-7deg)
 }
-
 .hero-art:after{
-content:"V";
-font:italic 210px Georgia,serif;
-color:rgba(255,255,255,.8)
+content:"V";font:italic 210px Georgia,serif;color:rgba(255,255,255,.8)
 }
-
 .art-label{
-position:absolute;
-bottom:20px;
-left:22px;
-color:#fff;
-font:italic 17px Georgia,serif;
-direction:ltr
+position:absolute;bottom:20px;left:22px;color:#fff;
+font:italic 17px Georgia,serif;direction:ltr
 }
-
 section{padding:66px 0}
-
-.section-head{
-text-align:center;
-margin-bottom:30px
-}
-
-.section-head h2{
-font-size:27px;
-font-weight:500;
-margin:0 0 6px
-}
-
-.section-head p{
-color:var(--muted);
-font-size:13px;
-margin:0
-}
-
-.categories{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px
-}
-
+.section-head{text-align:center;margin-bottom:30px}
+.section-head h2{font-size:27px;font-weight:500;margin:0 0 6px}
+.section-head p{color:var(--muted);font-size:13px;margin:0}
+.categories{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .cat{
-padding:28px;
-background:#eee6dc;
-min-height:145px;
-display:flex;
-align-items:end;
-justify-content:space-between
+padding:28px;background:#eee6dc;min-height:145px;
+display:flex;align-items:end;justify-content:space-between
 }
-
 .cat:nth-child(2){background:#e7e1da}
 .cat strong{font-size:21px;font-weight:500}
 .cat small{display:block;color:var(--muted);font-size:12px}
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .product{
-border:1px solid var(--line);
-background:#fff;
-overflow:hidden;
-transition:.25s
+border:1px solid var(--line);background:#fff;overflow:hidden;transition:.25s
 }
-
-.product:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 22px rgba(0,0,0,.08)
-}
-
+.product:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
 .product-art{
-height:220px;
-display:flex;
-align-items:center;
-justify-content:center;
+height:220px;display:flex;align-items:center;justify-content:center;
 background:linear-gradient(145deg,#eee7df,#d5c4b3);
-font-size:62px;
-overflow:hidden
+font-size:62px;overflow:hidden
 }
-
 .product-art img{
-width:100%;
-height:100%;
-display:block;
-object-fit:contain;
-background:#fff
+width:100%;height:100%;display:block;object-fit:contain;background:#fff
 }
-
-.product:nth-child(2) .product-art{
-background:linear-gradient(145deg,#e5e1dc,#bdb5aa)
-}
-
-.product:nth-child(3) .product-art{
-background:linear-gradient(145deg,#e8d9d0,#c8a995)
-}
-
-.product:nth-child(4) .product-art{
-background:linear-gradient(145deg,#e5e3de,#b7b2a8)
-}
-
+.product:nth-child(2) .product-art{background:linear-gradient(145deg,#e5e1dc,#bdb5aa)}
+.product:nth-child(3) .product-art{background:linear-gradient(145deg,#e8d9d0,#c8a995)}
+.product:nth-child(4) .product-art{background:linear-gradient(145deg,#e5e3de,#b7b2a8)}
 .product:nth-child(5) .product-art{background:#fff}
-
-.product:nth-child(6) .product-art{
-background:linear-gradient(145deg,#dedbd6,#aaa49a)
-}
-
+.product:nth-child(6) .product-art{background:linear-gradient(145deg,#dedbd6,#aaa49a)}
 .product-info{padding:15px}
-
-.product-info h3{
-font-size:15px;
-font-weight:500;
-margin:0 0 4px
+.product-info h3{font-size:15px;font-weight:500;margin:0 0 4px}
+.product-info p{font-size:12px;color:var(--muted);margin:0 0 12px}
+.product-info a:not(.order-btn){
+font-size:12px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:3px
 }
-
-.product-info p{
-font-size:12px;
-color:var(--muted);
-margin:0 0 12px
-}
-
-.product-info a{
-font-size:12px;
-color:var(--gold);
-border-bottom:1px solid var(--gold);
-padding-bottom:3px
-}
-
 .product-price{
-font-size:17px!important;
-color:#b33b66!important;
-font-weight:bold;
-margin:8px 0!important
+font-size:17px!important;color:#b33b66!important;
+font-weight:bold;margin:8px 0!important
 }
-
 .product-info .order-btn{
-display:block;
-background:var(--ink);
-color:white;
-border:0;
-padding:11px;
-text-align:center;
-margin-top:12px;
-font-size:12px;
-transition:.2s
+display:block;width:100%;background:var(--ink);color:white;
+border:0;padding:11px;text-align:center;margin-top:12px;
+font-size:12px;transition:.2s
 }
-
 .product-info .order-btn:hover{background:var(--gold)}
-
 .notice{
-background:var(--cream);
-padding:15px 18px;
-text-align:center;
-color:var(--muted);
-font-size:12px;
-margin-top:22px
+background:var(--cream);padding:15px 18px;text-align:center;
+color:var(--muted);font-size:12px;margin-top:22px
 }
-
-.about{
-background:var(--ink);
-color:#fff;
-padding:52px 0
-}
-
+.about{background:var(--ink);color:#fff;padding:52px 0}
 .about-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:30px
+display:flex;justify-content:space-between;align-items:center;gap:30px
 }
-
-.about p{
-color:#c9c1b8;
-max-width:650px;
-font-size:14px
-}
-
-.contact{
-background:var(--cream);
-text-align:center
-}
-
-.contact h2{
-font-size:28px;
-font-weight:500;
-margin:0 0 8px
-}
-
-.contact p{
-color:var(--muted);
-font-size:14px
-}
-
+.about p{color:#c9c1b8;max-width:650px;font-size:14px}
+.contact{background:var(--cream);text-align:center}
+.contact h2{font-size:28px;font-weight:500;margin:0 0 8px}
+.contact p{color:var(--muted);font-size:14px}
 .contact-handle{
-display:inline-block;
-margin:12px 0 22px;
-padding:10px 18px;
-border:1px solid var(--gold);
-direction:ltr;
-color:var(--ink)
+display:inline-block;margin:12px 0 22px;padding:10px 18px;
+border:1px solid var(--gold);direction:ltr;color:var(--ink)
 }
-
 footer{
-background:#111;
-color:#bdb5ac;
-text-align:center;
-padding:24px 12px;
-font-size:11px
+background:#111;color:#bdb5ac;text-align:center;
+padding:24px 12px;font-size:11px
 }
-
 footer strong{
-color:#fff;
-font-family:Georgia,serif;
-direction:ltr;
-display:block;
-font-size:18px;
-margin-bottom:5px
+color:#fff;font-family:Georgia,serif;direction:ltr;
+display:block;font-size:18px;margin-bottom:5px
+}
+.admin-link{
+display:inline-block;margin-top:12px;color:#c7a47d;
+cursor:pointer;text-decoration:underline
 }
 
+/* پنجره‌های ثبت سفارش و مدیریت */
+.modal{
+display:none;position:fixed;inset:0;z-index:10000;
+background:rgba(0,0,0,.72);padding:15px;
+overflow-y:auto;align-items:center;justify-content:center
+}
+.modal.show{display:flex}
+.modal-box{
+width:min(560px,100%);max-height:94vh;overflow-y:auto;
+background:#fffdfa;border-radius:10px;padding:24px;
+box-shadow:0 15px 60px rgba(0,0,0,.3)
+}
+.modal-box h2{font-size:21px;margin:0 0 15px}
+.modal-box h3{font-size:16px;margin:18px 0 8px}
+.field{margin:12px 0}
+.field label{display:block;font-size:13px;margin-bottom:5px}
+.field input,.field textarea,.field select{
+width:100%;padding:11px;border:1px solid #ddd;
+border-radius:5px;background:white;font-size:14px
+}
+.field textarea{min-height:85px;resize:vertical}
+.action{
+display:inline-block;border:0;padding:11px 16px;
+background:var(--ink);color:white;font-size:13px;
+margin:5px 3px;border-radius:4px
+}
+.action.gold{background:var(--gold)}
+.action.red{background:#a83232}
+.action.light{background:#e9e1d7;color:#171512}
+.full{width:100%;margin:8px 0}
+.close{
+float:left;border:0;background:transparent;font-size:25px;
+cursor:pointer;color:#777
+}
+.summary{
+background:var(--cream);padding:13px;border-radius:6px;
+font-size:13px;margin:12px 0
+}
+.summary p{margin:5px 0}
+.card-number{
+direction:ltr;text-align:center;font-size:21px;
+font-weight:bold;letter-spacing:1px;background:#f1e8dc;
+padding:13px;border-radius:5px
+}
+.warning{font-size:12px;color:#8a5c36}
+.success{color:#267448;font-size:13px}
+.order-card{
+border:1px solid var(--line);padding:13px;margin:12px 0;
+border-radius:6px;background:#fff
+}
+.order-card p{font-size:12px;margin:4px 0;overflow-wrap:anywhere}
+.order-card input,.order-card select,.order-card textarea{
+width:100%;padding:8px;border:1px solid #ddd;margin:5px 0;
+font-family:inherit
+}
+.admin-tools{display:flex;flex-wrap:wrap;gap:5px}
+.admin-tools button{font-size:11px}
 @media(max-width:760px){
 .links{gap:12px;font-size:12px}
-.nav{height:68px}
-.brand{font-size:24px}
+.nav{height:68px}.brand{font-size:24px}
 .hero{padding:48px 0}
-
-.hero-inner{
-grid-template-columns:1fr;
-gap:28px
-}
-
+.hero-inner{grid-template-columns:1fr;gap:28px}
 .hero-art{min-height:230px}
 .hero-art:after{font-size:160px}
 .categories{grid-template-columns:1fr}
-
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:10px
-}
-
+.products{grid-template-columns:repeat(2,1fr);gap:10px}
 .product-art{height:155px}
 .about-inner{display:block}
 }
-
 @media(max-width:420px){
 .links{gap:9px;flex-wrap:wrap;justify-content:flex-end}
 .links a{font-size:11px}
 .nav{gap:8px}
 .products{grid-template-columns:1fr 1fr}
 .product-art{height:130px}
+.modal-box{padding:17px}
 }
 </style>
 </head>
@@ -409,7 +254,6 @@ gap:10px
 VELORA
 <span>STYLE</span>
 </a>
-
 <nav class="links">
 <a href="#home">خانه</a>
 <a href="#categories">دسته‌بندی</a>
@@ -423,63 +267,39 @@ VELORA
 
 <section class="hero" id="home">
 <div class="wrap hero-inner">
-
 <div>
 <div class="eyebrow">VELORA STYLE · URMIA</div>
-
-<h1>
-استایل خاص تو،
-<br>
-از اینجا شروع می‌شود.
-</h1>
-
-<p>
-به Velora Style خوش آمدید؛ مجموعه‌ای برای انتخاب پوشاک زنانه و مردانه با نگاهی ساده، امروزی و شیک.
-</p>
-
+<h1>استایل خاص تو،<br>از اینجا شروع می‌شود.</h1>
+<p>به Velora Style خوش آمدید؛ مجموعه‌ای برای انتخاب پوشاک زنانه و مردانه با نگاهی ساده، امروزی و شیک.</p>
 <a class="btn" href="#products">مشاهده محصولات</a>
 </div>
-
 <div class="hero-art">
 <div class="art-label">Wear your confidence</div>
 </div>
-
 </div>
 </section>
 
 <section id="categories">
 <div class="wrap">
-
 <div class="section-head">
 <h2>دسته‌بندی‌ها</h2>
 <p>برای استایل‌های متفاوت، انتخاب‌های متنوع</p>
 </div>
-
 <div class="categories">
-
 <a class="cat" href="#products">
-<div>
-<strong>پوشاک زنانه</strong>
-<small>Women's Collection</small>
-</div>
+<div><strong>پوشاک زنانه</strong><small>Women's Collection</small></div>
 <span>↙</span>
 </a>
-
 <a class="cat" href="#products">
-<div>
-<strong>پوشاک مردانه</strong>
-<small>Men's Collection</small>
-</div>
+<div><strong>پوشاک مردانه</strong><small>Men's Collection</small></div>
 <span>↙</span>
 </a>
-
 </div>
 </div>
 </section>
 
 <section id="products">
 <div class="wrap">
-
 <div class="section-head">
 <h2>منتخب Velora</h2>
 <p>جدیدترین انتخاب‌های فروشگاه</p>
@@ -525,23 +345,18 @@ VELORA
 
 <article class="product">
 <div class="product-art">
-<img
-src="images/donati.png"
+<img src="images/donati.png"
 alt="ست لباس خواب زنانه دوناتی مدل M-127"
 loading="lazy"
-onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend','<span style=&quot;padding:18px;text-align:center;font-size:13px;color:#777&quot;>تصویر محصول بارگذاری نشد؛ تصویر را در رسانه‌های سایت آپلود کنید.</span>')"
->
+onerror="this.style.display='none';this.parentElement.innerHTML='تصویر محصول بارگذاری نشد'">
 </div>
-
 <div class="product-info">
 <h3>ست لباس خواب زنانه دوناتی</h3>
 <p class="product-price">۹۳۰٬۰۰۰ تومان</p>
 <p>مدل: M-127</p>
 <p>سایز: M</p>
 <p>رنگ‌بندی: سفید و صورتی</p>
-<a class="order-btn" href="tel:09376077837">
-سفارش و استعلام موجودی
-</a>
+<button class="order-btn" onclick="openCheckout()">ثبت سفارش</button>
 </div>
 </article>
 
@@ -557,57 +372,36 @@ onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('befor
 </div>
 
 <div class="notice">
-برای اطلاع از قیمت روز، سایزبندی و موجودی محصولات با فروشگاه تماس بگیرید.
+برای اطلاع از قیمت روز، سایزبندی و موجودی سایر محصولات با فروشگاه تماس بگیرید.
 </div>
-
 </div>
 </section>
 
 <section class="about">
 <div class="wrap about-inner">
-
 <div>
 <div class="eyebrow">ABOUT US</div>
 <h2 style="font-weight:500">درباره Velora Style</h2>
-
 <p>
 Velora Style فروشگاه پوشاک زنانه و مردانه در ارومیه است.
 برای استعلام قیمت روز، سایز و موجودی با شماره 09376077837 تماس بگیرید.
 </p>
 </div>
-
-<div class="brand">
-VELORA
-<span>STYLE</span>
-</div>
-
+<div class="brand">VELORA<span>STYLE</span></div>
 </div>
 </section>
 
 <section class="contact" id="contact">
 <div class="wrap">
-
 <h2>با ما در ارتباط باشید</h2>
-
-<p>
-برای اطلاع از قیمت روز، سایزبندی و موجودی با ما تماس بگیرید یا در اینستاگرام پیام دهید.
-</p>
-
-<a class="contact-handle" href="tel:09376077837" dir="ltr">
-0937 607 7837
-</a>
-
+<p>برای اطلاع از قیمت روز، سایزبندی و موجودی با ما تماس بگیرید یا در اینستاگرام پیام دهید.</p>
+<a class="contact-handle" href="tel:09376077837" dir="ltr">0937 607 7837</a>
 <br>
-
 <a class="btn" href="tel:09376077837">تماس با فروشگاه</a>
-
 <p>
 <a href="https://www.instagram.com/velorastyle.urmia/"
-target="_blank" rel="noopener">
-@velorastyle.urmia
-</a>
+target="_blank" rel="noopener">@velorastyle.urmia</a>
 </p>
-
 </div>
 </section>
 
@@ -616,14 +410,404 @@ target="_blank" rel="noopener">
 <footer>
 <strong>VELORA STYLE</strong>
 © تمامی حقوق برای Velora Style محفوظ است.
+<br>
+<a class="admin-link" onclick="openAdmin()">ورود مدیریت فروشگاه</a>
 </footer>
 
 <a id="velora-contact"
-href="https://wa.me/989376077837?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AE%D8%B1%DB%8C%D8%AF%20%D9%88%20%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85%20%D9%85%D9%88%D8%AC%D9%88%D8%AF%DB%8C%20%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85."
+href="https://wa.me/989376077837?text=سلام، برای خرید و استعلام موجودی محصولات پیام می‌دهم."
 target="_blank" rel="noopener"
 style="position:fixed;bottom:20px;left:20px;z-index:9999;background:#171512;color:#fff;padding:13px 20px;border-radius:30px;font-family:Tahoma,sans-serif;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.18)">
 💬 سفارش در واتساپ
 </a>
+
+<!-- فرم سفارش -->
+<div class="modal" id="checkoutModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('checkoutModal')">×</button>
+<h2>ثبت سفارش</h2>
+<p>ست لباس خواب زنانه دوناتی مدل M-127</p>
+
+<form id="checkoutForm">
+<div class="field">
+<label>نام و نام خانوادگی</label>
+<input id="customerName" required maxlength="100" placeholder="نام کامل شما">
+</div>
+<div class="field">
+<label>شماره موبایل</label>
+<input id="customerPhone" required inputmode="numeric"
+maxlength="11" placeholder="09123456789">
+</div>
+<div class="field">
+<label>آدرس کامل پستی</label>
+<textarea id="customerAddress" required maxlength="600"
+placeholder="استان، شهر، خیابان، کوچه، پلاک و واحد"></textarea>
+</div>
+<div class="field">
+<label>رنگ انتخابی</label>
+<select id="customerColor" required>
+<option value="">انتخاب رنگ</option>
+<option>سفید</option>
+<option>صورتی</option>
+</select>
+</div>
+<div class="summary">
+<p>قیمت محصول: <strong>۹۳۰٬۰۰۰ تومان</strong></p>
+<p>هزینه ارسال: <strong>۱۲۰٬۰۰۰ تومان</strong></p>
+<hr>
+<p>مبلغ قابل پرداخت: <strong>۱٬۰۵۰٬۰۰۰ تومان</strong></p>
+</div>
+<button class="action full" type="submit">ثبت اطلاعات و ادامه پرداخت</button>
+</form>
+</div>
+</div>
+
+<!-- اطلاعات پرداخت -->
+<div class="modal" id="paymentModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('paymentModal')">×</button>
+<h2>اطلاعات پرداخت سفارش</h2>
+<p>لطفاً مبلغ زیر را به شماره کارت درج‌شده واریز کنید.</p>
+<div class="summary">
+<p>نام صاحب کارت: <strong>رضا موسی‌زاده</strong></p>
+<div class="card-number">6063 7312 1180 1429</div>
+<p style="text-align:center">مبلغ قابل پرداخت</p>
+<h2 style="text-align:center;color:#a83232">۱٬۰۵۰٬۰۰۰ تومان</h2>
+</div>
+<p class="warning">
+پس از واریز، تصویر فیش پرداخت را در واتساپ برای فروشگاه ارسال کنید.
+</p>
+<p>
+پس از ارسال فیش، سفارش شما بررسی می‌شود و ظرف ۷۲ ساعت ارسال خواهد شد.
+کد رهگیری سفارش را تا پایان فرایند نزد خود نگه دارید.
+</p>
+<div class="summary" id="trackingInfo"></div>
+<button class="action gold full" onclick="sendWhatsApp()">
+ارسال اطلاعات سفارش و رفتن به واتساپ
+</button>
+<button class="action light full" onclick="closeModal('paymentModal')">بستن</button>
+</div>
+</div>
+
+<!-- ورود مدیریت -->
+<div class="modal" id="adminLoginModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('adminLoginModal')">×</button>
+<h2>ورود مدیریت</h2>
+<div class="field">
+<label>رمز عبور مدیریت</label>
+<input id="adminPassword" type="password" placeholder="رمز عبور">
+</div>
+<button class="action full" onclick="loginAdmin()">ورود به پنل</button>
+<p id="loginError" class="warning"></p>
+</div>
+</div>
+
+<!-- پنل مدیریت -->
+<div class="modal" id="adminModal">
+<div class="modal-box" style="width:min(850px,100%)">
+<button class="close" onclick="closeModal('adminModal')">×</button>
+<h2>پنل مدیریت Velora Style</h2>
+<p id="orderCount"></p>
+
+<div class="admin-tools">
+<button class="action gold" onclick="exportOrders()">دریافت فایل پشتیبان سفارش‌ها</button>
+<button class="action light" onclick="changeAdminPassword()">تغییر رمز مدیریت</button>
+<button class="action light" onclick="renderOrders()">به‌روزرسانی فهرست</button>
+</div>
+
+<div id="ordersList"></div>
+<p class="warning">
+توجه: سفارش‌ها فقط در حافظه همین مرورگر ذخیره می‌شوند.
+برای نگهداری سفارش‌ها در چند دستگاه باید پایگاه داده آنلاین راه‌اندازی شود.
+</p>
+<button class="action red full" onclick="closeModal('adminModal')">خروج از پنل</button>
+</div>
+</div>
+
+<script>
+const PRODUCT_NAME = "ست لباس خواب زنانه دوناتی مدل M-127";
+const PRODUCT_PRICE = 930000;
+const SHIPPING_PRICE = 120000;
+const TOTAL_PRICE = PRODUCT_PRICE + SHIPPING_PRICE;
+const WHATSAPP_NUMBER = "989376077837";
+
+let currentOrder = null;
+
+function getOrders(){
+  try{
+    return JSON.parse(localStorage.getItem("velora_orders") || "[]");
+  }catch(e){
+    return [];
+  }
+}
+
+function saveOrders(orders){
+  try{
+    localStorage.setItem("velora_orders", JSON.stringify(orders));
+    return true;
+  }catch(e){
+    alert("ذخیره سفارش انجام نشد. فضای ذخیره‌سازی مرورگر را بررسی کنید.");
+    return false;
+  }
+}
+
+function formatPrice(number){
+  return Number(number).toLocaleString("fa-IR") + " تومان";
+}
+
+function makeTrackingCode(){
+  return "VEL-" + Date.now().toString().slice(-8) +
+    Math.floor(100 + Math.random() * 900);
+}
+
+function openCheckout(){
+  document.getElementById("checkoutForm").reset();
+  document.getElementById("checkoutModal").classList.add("show");
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
+
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.replace(/[\s-]/g,"");
+  const address = document.getElementById("customerAddress").value.trim();
+  const color = document.getElementById("customerColor").value;
+
+  if(!/^09\d{9}$/.test(phone)){
+    alert("شماره موبایل باید ۱۱ رقم و با 09 شروع شود.");
+    return;
+  }
+
+  const order = {
+    id:makeTrackingCode(),
+    name:name,
+    phone:phone,
+    address:address,
+    color:color,
+    product:PRODUCT_NAME,
+    productPrice:PRODUCT_PRICE,
+    shipping:SHIPPING_PRICE,
+    total:TOTAL_PRICE,
+    status:"در انتظار پرداخت",
+    date:new Date().toLocaleString("fa-IR"),
+    note:""
+  };
+
+  const orders = getOrders();
+  orders.unshift(order);
+
+  if(!saveOrders(orders)) return;
+
+  currentOrder = order;
+  closeModal("checkoutModal");
+
+  document.getElementById("trackingInfo").innerHTML =
+    "<p>کد رهگیری شما:</p><h3 style='direction:ltr;text-align:center'>" +
+    order.id +
+    "</h3><p>این کد را یادداشت کنید.</p>";
+
+  document.getElementById("paymentModal").classList.add("show");
+});
+
+function sendWhatsApp(){
+  if(!currentOrder){
+    alert("اطلاعات سفارش پیدا نشد.");
+    return;
+  }
+
+  const o = currentOrder;
+  const message =
+    "سلام، سفارش جدید در Velora Style ثبت کرده‌ام.%0A" +
+    "کد رهگیری: " + encodeURIComponent(o.id) + "%0A" +
+    "نام: " + encodeURIComponent(o.name) + "%0A" +
+    "موبایل: " + encodeURIComponent(o.phone) + "%0A" +
+    "آدرس: " + encodeURIComponent(o.address) + "%0A" +
+    "محصول: " + encodeURIComponent(o.product) + "%0A" +
+    "رنگ: " + encodeURIComponent(o.color) + "%0A" +
+    "مبلغ کل: " + encodeURIComponent(formatPrice(o.total)) +
+    "%0Aتصویر فیش پرداخت را نیز ارسال می‌کنم.";
+
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message,"_blank");
+}
+
+function openAdmin(){
+  document.getElementById("adminPassword").value = "";
+  document.getElementById("loginError").textContent = "";
+  document.getElementById("adminLoginModal").classList.add("show");
+}
+
+function loginAdmin(){
+  const entered = document.getElementById("adminPassword").value;
+  const savedPassword = localStorage.getItem("velora_admin_password") || "13811026";
+
+  if(entered !== savedPassword){
+    document.getElementById("loginError").textContent = "رمز عبور اشتباه است.";
+    return;
+  }
+
+  closeModal("adminLoginModal");
+  renderOrders();
+  document.getElementById("adminModal").classList.add("show");
+}
+
+function renderOrders(){
+  const orders = getOrders();
+  document.getElementById("orderCount").textContent =
+    "تعداد سفارش‌های ثبت‌شده: " + orders.length;
+
+  const container = document.getElementById("ordersList");
+
+  if(!orders.length){
+    container.innerHTML = "<p>هنوز سفارشی ثبت نشده است.</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  orders.forEach((o,index)=>{
+    const card = document.createElement("div");
+    card.className = "order-card";
+
+    const title = document.createElement("h3");
+    title.textContent = "سفارش " + o.id;
+    card.appendChild(title);
+
+    const details = [
+      "تاریخ: " + o.date,
+      "نام: " + o.name,
+      "شماره تماس: " + o.phone,
+      "آدرس: " + o.address,
+      "محصول: " + o.product,
+      "رنگ: " + o.color,
+      "مبلغ محصول: " + formatPrice(o.productPrice),
+      "هزینه ارسال: " + formatPrice(o.shipping),
+      "مبلغ کل: " + formatPrice(o.total)
+    ];
+
+    details.forEach(line=>{
+      const p = document.createElement("p");
+      p.textContent = line;
+      card.appendChild(p);
+    });
+
+    const statusLabel = document.createElement("label");
+    statusLabel.textContent = "وضعیت سفارش:";
+    card.appendChild(statusLabel);
+
+    const select = document.createElement("select");
+    [
+      "در انتظار پرداخت",
+      "در حال بررسی",
+      "تأیید شده",
+      "در حال آماده‌سازی",
+      "ارسال شده",
+      "لغو شده"
+    ].forEach(status=>{
+      const option = document.createElement("option");
+      option.value = status;
+      option.textContent = status;
+      if(o.status === status) option.selected = true;
+      select.appendChild(option);
+    });
+
+    select.addEventListener("change",()=>{
+      const latest = getOrders();
+      if(!latest[index]) return;
+      latest[index].status = select.value;
+      saveOrders(latest);
+    });
+    card.appendChild(select);
+
+    const noteLabel = document.createElement("label");
+    noteLabel.textContent = "یادداشت مدیریت:";
+    card.appendChild(noteLabel);
+
+    const note = document.createElement("textarea");
+    note.value = o.note || "";
+    note.placeholder = "یادداشت درباره این سفارش...";
+    note.addEventListener("change",()=>{
+      const latest = getOrders();
+      if(!latest[index]) return;
+      latest[index].note = note.value;
+      saveOrders(latest);
+    });
+    card.appendChild(note);
+
+    const tools = document.createElement("div");
+    tools.className = "admin-tools";
+
+    const whatsapp = document.createElement("button");
+    whatsapp.className = "action gold";
+    whatsapp.textContent = "تماس واتساپی با مشتری";
+    whatsapp.onclick = ()=>{
+      window.open("https://wa.me/98" + o.phone.replace(/^0/,""),"_blank");
+    };
+    tools.appendChild(whatsapp);
+
+    const remove = document.createElement("button");
+    remove.className = "action red";
+    remove.textContent = "حذف سفارش";
+    remove.onclick = ()=>{
+      if(!confirm("از حذف این سفارش مطمئن هستید؟")) return;
+      const latest = getOrders();
+      latest.splice(index,1);
+      saveOrders(latest);
+      renderOrders();
+    };
+    tools.appendChild(remove);
+
+    card.appendChild(tools);
+    container.appendChild(card);
+  });
+}
+
+function exportOrders(){
+  const orders = getOrders();
+  const blob = new Blob(
+    [JSON.stringify(orders,null,2)],
+    {type:"application/json;charset=utf-8"}
+  );
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "velora-orders-backup.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function changeAdminPassword(){
+  const oldPassword = localStorage.getItem("velora_admin_password") || "13811026";
+  const current = prompt("رمز فعلی را وارد کنید:");
+  if(current === null) return;
+
+  if(current !== oldPassword){
+    alert("رمز فعلی اشتباه است.");
+    return;
+  }
+
+  const next = prompt("رمز جدید را وارد کنید (حداقل ۶ کاراکتر):");
+  if(next === null) return;
+
+  if(next.length < 6){
+    alert("رمز باید حداقل ۶ کاراکتر باشد.");
+    return;
+  }
+
+  localStorage.setItem("velora_admin_password",next);
+  alert("رمز جدید در همین مرورگر ذخیره شد.");
+}
+
+document.querySelectorAll(".modal").forEach(modal=>{
+  modal.addEventListener("click",function(e){
+    if(e.target === modal) modal.classList.remove("show");
+  });
+});
+</script>
 
 </body>
 </html>
