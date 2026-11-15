@@ -560,7 +560,10 @@ function renderProducts(){
   img.loading="lazy";
 
   img.onerror=()=>{
-   card.remove();
+   img.style.display="none";
+   imageBox.textContent="تصویر محصول";
+   imageBox.style.color="var(--muted)";
+   imageBox.style.fontWeight="700";
   };
 
   imageBox.appendChild(img);
