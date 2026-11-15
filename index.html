@@ -471,6 +471,19 @@ const productsData = [
   image:"images/donati.png",
   description:"ست لباس خواب زنانه دوناتی",
   available:true
+ },
+ {
+  id:6,
+  name:"زیرپیراهن مردانه رکابی نخی",
+  category:"مردانه",
+  price:229000,
+  size:"46 تا 55",
+  sizes:["46","47","48","49","50","51","52","53","54","55"],
+  color:"سفید، قرمز، بنفش، طوسی، زرد، آبی",
+  colors:["سفید","قرمز","بنفش","طوسی","زرد","آبی"],
+  image:"images/undershirt-tank.jpg",
+  description:"زیرپیراهن رکابی مردانه؛ ۱۰۰٪ نخ طبق اطلاعات روی بسته‌بندی",
+  available:true
  }
 
  // محصول جدید:
@@ -565,12 +578,46 @@ function renderProducts(){
   price.className="price";
   price.textContent=money(p.price);
 
+  const colorLabel=document.createElement("label");
+  colorLabel.textContent="رنگ: ";
+  colorLabel.style.display="block";
+  colorLabel.style.marginTop="10px";
+  const colorSelect=document.createElement("select");
+  colorSelect.style.width="100%";
+  colorSelect.style.padding="9px";
+  colorSelect.style.border="1px solid var(--line)";
+  colorSelect.style.borderRadius="8px";
+  (p.colors || [p.color || "پیش‌فرض"]).forEach(color=>{
+   const option=document.createElement("option");
+   option.value=color;
+   option.textContent=color;
+   colorSelect.appendChild(option);
+  });
+  colorLabel.appendChild(colorSelect);
+
+  const sizeLabel=document.createElement("label");
+  sizeLabel.textContent="سایز: ";
+  sizeLabel.style.display="block";
+  sizeLabel.style.marginTop="10px";
+  const sizeSelect=document.createElement("select");
+  sizeSelect.style.width="100%";
+  sizeSelect.style.padding="9px";
+  sizeSelect.style.border="1px solid var(--line)";
+  sizeSelect.style.borderRadius="8px";
+  (p.sizes || [p.size || "فری‌سایز"]).forEach(size=>{
+   const option=document.createElement("option");
+   option.value=size;
+   option.textContent=size;
+   sizeSelect.appendChild(option);
+  });
+  sizeLabel.appendChild(sizeSelect);
+
   const btn=document.createElement("button");
   btn.className="btn btn-dark";
   btn.textContent="افزودن به سبد خرید";
-  btn.onclick=()=>addToCart(p.id);
+  btn.onclick=()=>addToCart(p.id,colorSelect.value,sizeSelect.value);
 
-  info.append(title,desc,price,btn);
+  info.append(title,desc,price,colorLabel,sizeLabel,btn);
   card.append(imageBox,info);
   holder.appendChild(card);
  });
@@ -589,16 +636,18 @@ function filterProducts(category,button){
 
 /* سبد خرید */
 
-function addToCart(id){
+function addToCart(id,color,size){
  const product=getAvailableProducts().find(p=>p.id===id);
  if(!product)return;
 
- const existing=cart.find(item=>item.id===id);
+ const existing=cart.find(item=>
+  item.id===id && item.color===color && item.size===size
+ );
 
  if(existing){
   existing.qty++;
  }else{
-  cart.push({id,qty:1});
+  cart.push({id,color,size,qty:1});
  }
 
  updateCartCount();
@@ -620,6 +669,9 @@ function getCartDetails(){
 
   return {
    ...product,
+   color:item.color,
+   size:item.size,
+   key:String(item.id)+"-"+String(item.color)+"-"+String(item.size),
    qty:item.qty,
    subtotal:product.price*item.qty
   };
@@ -667,6 +719,9 @@ function renderCart(){
 
   const price=document.createElement("small");
   price.textContent=money(item.price)+" برای هر عدد";
+  const options=document.createElement("small");
+  options.textContent="رنگ: "+(item.color||"—")+" | سایز: "+(item.size||"—");
+  options.style.display="block";
 
   const amount=document.createElement("div");
   amount.textContent="جمع: "+money(item.subtotal);
@@ -674,26 +729,26 @@ function renderCart(){
   amount.style.fontWeight="700";
   amount.style.fontSize="13px";
 
-  info.append(name,price,amount);
+  info.append(name,price,options,amount);
 
   const controls=document.createElement("div");
   controls.className="qty-control";
 
   const minus=document.createElement("button");
   minus.textContent="−";
-  minus.onclick=()=>changeQty(item.id,-1);
+  minus.onclick=()=>changeQty(item.key,-1);
 
   const qty=document.createElement("b");
   qty.textContent=item.qty.toLocaleString("fa-IR");
 
   const plus=document.createElement("button");
   plus.textContent="+";
-  plus.onclick=()=>changeQty(item.id,1);
+  plus.onclick=()=>changeQty(item.key,1);
 
   const remove=document.createElement("button");
   remove.className="remove";
   remove.textContent="حذف";
-  remove.onclick=()=>removeFromCart(item.id);
+  remove.onclick=()=>removeFromCart(item.key);
 
   controls.append(minus,qty,plus,remove);
   row.append(info,controls);
@@ -709,22 +764,22 @@ function renderCart(){
   money(getTotal())+'</b></div>';
 }
 
-function changeQty(id,change){
- const item=cart.find(x=>x.id===id);
+function changeQty(key,change){
+ const item=cart.find(x=>String(x.id)+"-"+String(x.color)+"-"+String(x.size)===key);
  if(!item)return;
 
  item.qty+=change;
 
  if(item.qty<=0){
-  cart=cart.filter(x=>x.id!==id);
+  cart=cart.filter(x=>String(x.id)+"-"+String(x.color)+"-"+String(x.size)!==key);
  }
 
  updateCartCount();
  renderCart();
 }
 
-function removeFromCart(id){
- cart=cart.filter(x=>x.id!==id);
+function removeFromCart(key){
+ cart=cart.filter(x=>String(x.id)+"-"+String(x.color)+"-"+String(x.size)!==key);
  updateCartCount();
  renderCart();
 }
