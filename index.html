@@ -487,15 +487,19 @@ const productsData = [
  },
  {
   id:7,
-  name:"سوتین زنانه دابل پوش‌آپ مشکی",
+  name:"سوتین زنانه دابل پوش‌آپ",
   category:"زنانه",
   price:899000,
-  size:"75",
-  sizes:["75"],
-  color:"مشکی",
-  colors:["مشکی"],
+  size:"75 و 80",
+  sizes:["75","80"],
+  color:"مشکی، کالباسی",
+  colors:["مشکی","کالباسی"],
+  variants:[
+   {color:"مشکی",size:"75",stock:null},
+   {color:"کالباسی",size:"80",stock:2}
+  ],
   image:"double-push-up-75.png",
-  description:"مدل DOUBLE PUSH UP با سایز ۷۵",
+  description:"مدل DOUBLE PUSH UP؛ سایز ۷۵ مشکی و سایز ۸۰ کالباسی",
   available:true
  }
 
@@ -542,6 +546,15 @@ function getAvailableProducts(){
   Number(p.price) > 0 &&
   p.image
  );
+}
+
+function getProductVariants(product){
+ if(Array.isArray(product.variants) && product.variants.length){
+  return product.variants;
+ }
+ const colors=product.colors || [product.color || "پیش‌فرض"];
+ const sizes=product.sizes || [product.size || "فری‌سایز"];
+ return colors.flatMap(color=>sizes.map(size=>({color,size,stock:null})));
 }
 
 function renderProducts(){
@@ -594,6 +607,7 @@ function renderProducts(){
   price.className="price";
   price.textContent=money(p.price);
 
+  const variants=getProductVariants(p);
   const colorLabel=document.createElement("label");
   colorLabel.textContent="رنگ: ";
   colorLabel.style.display="block";
@@ -603,7 +617,7 @@ function renderProducts(){
   colorSelect.style.padding="9px";
   colorSelect.style.border="1px solid var(--line)";
   colorSelect.style.borderRadius="8px";
-  (p.colors || [p.color || "پیش‌فرض"]).forEach(color=>{
+  [...new Set(variants.map(v=>v.color))].forEach(color=>{
    const option=document.createElement("option");
    option.value=color;
    option.textContent=color;
@@ -620,20 +634,50 @@ function renderProducts(){
   sizeSelect.style.padding="9px";
   sizeSelect.style.border="1px solid var(--line)";
   sizeSelect.style.borderRadius="8px";
-  (p.sizes || [p.size || "فری‌سایز"]).forEach(size=>{
-   const option=document.createElement("option");
-   option.value=size;
-   option.textContent=size;
-   sizeSelect.appendChild(option);
-  });
   sizeLabel.appendChild(sizeSelect);
+
+  const stockLabel=document.createElement("small");
+  stockLabel.style.display="block";
+  stockLabel.style.marginTop="8px";
+  stockLabel.style.color="var(--green)";
 
   const btn=document.createElement("button");
   btn.className="btn btn-dark";
   btn.textContent="افزودن به سبد خرید";
-  btn.onclick=()=>addToCart(p.id,colorSelect.value,sizeSelect.value);
 
-  info.append(title,desc,price,colorLabel,sizeLabel,btn);
+  function updateVariantChoices(){
+   const selectedColor=colorSelect.value;
+   const matching=variants.filter(v=>v.color===selectedColor);
+   sizeSelect.innerHTML="";
+   matching.forEach(variant=>{
+    const option=document.createElement("option");
+    option.value=variant.size;
+    option.textContent=variant.size;
+    sizeSelect.appendChild(option);
+   });
+   const selected=matching.find(v=>v.size===sizeSelect.value) || matching[0];
+   if(selected && selected.stock!==null && selected.stock!==undefined){
+    const inCart=cart.find(item=>item.id===p.id && item.color===selected.color && item.size===selected.size);
+    const remaining=Math.max(0,selected.stock-(inCart?.qty || 0));
+    stockLabel.textContent="موجودی: "+remaining.toLocaleString("fa-IR")+" عدد";
+    btn.disabled=remaining===0;
+    btn.textContent=remaining===0?"ناموجود":"افزودن به سبد خرید";
+   }else{
+    stockLabel.textContent="";
+    btn.disabled=false;
+    btn.textContent="افزودن به سبد خرید";
+   }
+  }
+
+  colorSelect.addEventListener("change",updateVariantChoices);
+  sizeSelect.addEventListener("change",updateVariantChoices);
+  btn.onclick=()=>{
+   addToCart(p.id,colorSelect.value,sizeSelect.value);
+   updateVariantChoices();
+  };
+  updateVariantChoices();
+
+  info.append(title,desc,price,colorLabel,sizeLabel,stockLabel,btn);
   card.append(imageBox,info);
   holder.appendChild(card);
  });
@@ -656,9 +700,17 @@ function addToCart(id,color,size){
  const product=getAvailableProducts().find(p=>p.id===id);
  if(!product)return;
 
+ const variant=getProductVariants(product).find(v=>v.color===color && v.size===size);
+ if(!variant)return;
+
  const existing=cart.find(item=>
   item.id===id && item.color===color && item.size===size
  );
+ const currentQty=existing?.qty || 0;
+ if(variant.stock!==null && variant.stock!==undefined && currentQty>=variant.stock){
+  alert("موجودی این رنگ و سایز تمام شده است.");
+  return;
+ }
 
  if(existing){
   existing.qty++;
@@ -687,6 +739,7 @@ function getCartDetails(){
    ...product,
    color:item.color,
    size:item.size,
+   stock:getProductVariants(product).find(v=>v.color===item.color && v.size===item.size)?.stock ?? null,
    key:String(item.id)+"-"+String(item.color)+"-"+String(item.size),
    qty:item.qty,
    subtotal:product.price*item.qty
@@ -759,6 +812,7 @@ function renderCart(){
 
   const plus=document.createElement("button");
   plus.textContent="+";
+  plus.disabled=item.stock!==null && item.qty>=item.stock;
   plus.onclick=()=>changeQty(item.key,1);
 
   const remove=document.createElement("button");
@@ -783,6 +837,13 @@ function renderCart(){
 function changeQty(key,change){
  const item=cart.find(x=>String(x.id)+"-"+String(x.color)+"-"+String(x.size)===key);
  if(!item)return;
+
+ const product=getAvailableProducts().find(p=>p.id===item.id);
+ const variant=product && getProductVariants(product).find(v=>v.color===item.color && v.size===item.size);
+ if(change>0 && variant && variant.stock!==null && variant.stock!==undefined && item.qty>=variant.stock){
+  alert("بیشتر از موجودی ثبت‌شده نمی‌توانید اضافه کنید.");
+  return;
+ }
 
  item.qty+=change;
 
@@ -883,7 +944,7 @@ function makeOrderMessage(){
  const o=currentOrder;
 
  const items=o.items.map(item=>
-  item.name+" × "+item.qty+" = "+money(item.subtotal)
+  item.name+" ("+(item.color||"—")+", سایز "+(item.size||"—")+") × "+item.qty+" = "+money(item.subtotal)
  ).join("\n");
 
  return "سلام، رسید پرداخت سفارش Velora Style\n"+
